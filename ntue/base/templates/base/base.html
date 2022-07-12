@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>國北Eat點通</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../../static/base/img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link href="../../static/base/css/style.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href="../../static/base/vendor/responsive/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <!-- ****** Top Header Area Start ****** -->
+    <div class="top_header_area fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <h4 class="mt-2">國北Eat點通</h4>
+                </div>
+                <!--  看板  Area -->
+                <div class="col-lg-9 col-md-8 col-sm-12 ">
+                    <div class="signup-search-area d-flex align-items-center justify-content-end">
+                        <div class="billboard_register_area d-flex pt-2">
+                            <div class="billboard">
+                                <a href="register.html">校園版</a>
+                            </div>
+                            <div class="billboard">
+                                <a href="index.html">美食版</a>
+                            </div>
+                            <div class="groupbuy">
+                                <a href="groupbuy.html">團購版</a>
+                            </div>
+                            {% if request.user.is_authenticated %}
+                            <div class="logout ">
+                                <a href="/accounts/logout">Logout</a>
+                            </div>
+                            {% else %}
+                            <div class="login ">
+                                <a href="/accounts/login">Login</a>
+                            </div>
+                            {% endif %}
+
+
+                            <i class="fa fa-bell me-3 ms-3 mt-1 fz-18" aria-hidden="true"></i>
+
+                            <!--個人檔案offcanvas start-->
+                            <i class="fa fa-user-circle me-3 mt-1 fz-19" aria-hidden="true"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"></i>
+
+                            <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                                <div class="offcanvas-header">
+                                    <h4 class="offcanvas-title mt-3" id="offcanvasScrollingLabel">我的帳戶</h4>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body ms-3">
+                                    <div class="d-flex">
+                                        <img class="person_image" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/iu-李知恩-正能量-語錄-1571048097.jpg?crop=0.503xw:1.00xh;0,0&resize=640:*" alt="">
+                                        <h5 class="name mt-4 ms-3">李知恩</h5>
+
+                                    </div>
+                                    <div class="level mt-3 5">N point : 100 · 見習評論家</div>
+
+                                    <hr>
+                               
+                                    <div class="my_post fz-18 pb-2">我的文章</div>
+                                    <div class="my_collection fz-18 pb-2">我的收藏</div>
+                                    <div class="my_follow fz-18 pb-2">我的追蹤</div>
+
+                                </div>
+                            </div>
+
+                            <!--個人檔案offcanvas end-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ****** Top Header Area End ****** -->
+
+    <!-- ****** 封面大圖大字 start ****** -->
+    <header class="header_area ">
+        
+                    <div class="logo_area text-center mt-5">
+                        <img class="cover_img" src="./../../static/base/img/cover.png" alt="">
+                        
+               
+    </header>
+    <!-- ****** 封面大圖大字 end ****** -->
+
+
+
+    <!-- ****** 選單頁面nav start****** -->
+    <nav class="navbar navbar-expand-lg mt-5 mb-1 navbar_mid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yummyfood-nav" aria-controls="yummyfood-nav" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
+        <!-- Menu Area Start -->
+        <div class="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
+            <ul class="navbar-nav" id="yummy-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">附近店家</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">熱門店家排行</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">美食地圖</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="archive.html">美食文章</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">今天吃什麼</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forum.html">討論區</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ****** 選單頁面nav end****** -->
+    
+    <div class="main">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- ****** Footer Area Start ****** -->
+    <footer class="footer_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-content">  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Copywrite Text -->
+                    <div class="copy_right_text text-center">
+                        <p>本網站目前為學校作業測試用，圖片及文章段落來源為網路</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ****** Footer Area End ****** -->
+
+
+
+    <!-- Jquery-2.2.4 js -->
+    <script src="../../static/base/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="../../static/base/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap-4 js -->
+    <script src="../../static/base/js/bootstrap/bootstrap.min.js"></script>
+    <!-- Bootstrap-5 js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <!-- All Plugins JS -->
+    <script src="../../static/base/js/others/plugins.js"></script>
+    <!-- Active JS -->
+    <script src="../../static/base/js/active.js"></script>
+</body>

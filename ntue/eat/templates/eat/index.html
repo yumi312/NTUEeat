@@ -1,0 +1,533 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+    
+
+    <!-- ****** 最新活動照片輪播 start****** -->
+    <div class="container">
+        <div class="row">
+            <h1 class="mt-5 pt-5 pb-5 text-center">最新活動資訊</h1>
+            <div class="col-lg-12">
+                <div id="carouselExampleCaptions" class="carousel slide mb-5" data-bs-ride="carousel" >
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  </div>
+                  <div class="carousel-inner " style="width: 100%; height: 400px;">
+                    <div class="carousel-item active">
+                      <img class="new_activity_image" src="https://www.callingtaiwan.com.tw/wp-content/uploads/2021/08/200432363_4251851594858016_4793185401893869264_n.png" class="d-block w-100" alt="...">
+                      
+                    </div>
+                    <div class="carousel-item">
+                      <img class="new_activity_image"src="https://www.grand-hotel.org/FileUpload/Portals/台北/周年慶吃到飽-金龍海報a-03(1).jpg" class="d-block w-100" alt="...">
+                     
+                    </div>
+                    <div class="carousel-item">
+                      <img class="new_activity_image"src="https://www.callingtaiwan.com.tw/wp-content/uploads/2021/08/3-800x800.jpg" class="d-block w-100" alt="...">
+                      
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+            </div>
+        </div> 
+    </div> 
+    <!-- ****** 最新活動照片輪播 end****** -->
+    
+
+
+    <!-- ****** 本週熱門店家 start ****** -->
+    <div class="container">
+        <div class="row ">
+            <h1 class="text-center mt-5 pt-5 pb-5">本週熱門商家</h1>
+            <div class="welcome-post-sliders owl-carousel ">
+                <!-- Single Slide -->
+                <div class="welcome-single-slide">
+                    <!-- Post Thumb -->
+                    <img src="https://i0.wp.com/maplechenfeng.com/wp-content/uploads/2020/07/IMG_2514.jpg?resize=1000%2C1000&ssl=1" alt="">
+                    
+                    <!-- Overlay Text -->
+                    <div class="project_title">
+                       
+                        <a href="#">
+                            <h5>春山茶水</h5>
+                            <p class="pt-3 text-white">台北市大安區復興南路二段323號</p>
+                            <i class="fa fa-heart-o text-white" aria-hidden="true">999</i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="welcome-single-slide">
+                    <!-- Post Thumb -->
+                    <img src="https://live.staticflickr.com/65535/49781156282_e84337ff36_b.jpg" alt="">
+                    <!-- Overlay Text -->
+                    <div class="project_title">
+                        
+                        <a href="#">
+                            <h5>米提銀行</h5>
+                            <p class="pt-3 text-white">台北市大安區復興南路二段323號</p>
+                            <i class="fa fa-heart-o text-white" aria-hidden="true">999</i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="welcome-single-slide">
+                    <!-- Post Thumb -->
+                    <img src="https://image.daai.tv/ecofamily/old/1109_640X0.jpeg" alt="">
+                    <!-- Overlay Text -->
+                    <div class="project_title">
+                        
+                        <a href="#">
+                            <h5>玉欣珍</h5>
+                            <p class="pt-3 text-white">台北市大安區復興南路二段291號</p>
+                            <i class="fa fa-heart-o text-white" aria-hidden="true">999</i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="welcome-single-slide">
+                    <!-- Post Thumb -->
+                    <img src="https://pic.pimg.tw/jeterbecky/1618238254-3353078130-g_n.jpg" alt="">
+                    <!-- Overlay Text -->
+                    <div class="project_title">
+                        
+                        <a href="#">
+                            <h5>安好食</h5>
+                            <p class="pt-3 text-white">台北市大安區辛亥路二段201號</p>
+                            <i class="fa fa-heart-o text-white" aria-hidden="true">999</i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Single Slide -->
+             
+                <div class="welcome-single-slide">
+                    <!-- Post Thumb -->
+                    <img src="https://farm5.staticflickr.com/4380/37144569860_284e9612e7_b.jpg" alt="">
+                    <!-- Overlay Text -->
+                    <div class="project_title">
+                       
+                        <a href="#">
+                            <h5>好食</h5>
+                            <p class="pt-3 text-white">台北市大安區和平東路二段357巷7號</p>
+                            <i class="fa fa-heart-o text-white" aria-hidden="true">999</i>
+                        </a>
+                    </div>
+                </div>
+
+            </div><!--welcome-post-sliders-->
+        </div> <!--row-->
+    </div>
+    <!-- ****** 本週熱門店家 end ****** -->
+
+
+
+   
+
+    <!-- ****** 精選文章區 Start ****** -->
+    <section class="blog_area section_padding_0_50 mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col col-lg-12">
+                    <div class="row">
+                        <h1 class="text-center mt-5 pt-5 pb-5">精選文章</h1>
+                        <!-- Single Post -->
+                        <div class="col-12 col-lg-8 ">
+                            <div class="single-post wow fadeInUp" data-wow-delay=".2s">
+                                <!-- Post Thumb -->
+                                <div class="post-thumb">
+                                    <img src="https://ladymoko.com/wp-content/uploads/20180915131439_52.jpg" alt="">
+                                </div>
+                                <!-- Post Content -->
+                                <div class="post-content">
+                                    <div class="post-meta d-flex">
+                                        <div class="post-author-date-area d-flex">
+                                            <!-- Post Author -->
+                                            <div class="post-author">
+                                                <a href="#">By Alice</a>
+                                            </div>
+                                            <!-- Post Date -->
+                                            <div class="post-date">
+                                                <a href="#">Aug 5, 2020</a>
+                                            </div>
+                                        </div>
+                                        <!-- Post Comment & Share Area -->
+                                        <div class="post-comment-share-area d-flex">
+                                            <!-- Post Favourite -->
+                                            <div class="post-favourite">
+                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
+                                            </div>
+                                            <!-- Post Comments -->
+                                            <div class="post-comments">
+                                                <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
+                                            </div>
+                                            <!-- Post Share -->
+                                            <div class="post-share">
+                                                <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <h2 class="post-headline">科技大樓美食10 | 超高人氣美食店家</h2>
+                                    </a>
+                                    <p>經濟之都台北總給人物價很高的印象，花在三餐上的開銷更是不容小覷，不過別擔心！小編這次特別挑選了10間 科技大樓美食 商家，針對附近的上班族和學生，餐點絕對是便宜、好吃、分量又大。趕快把這些超高人氣、高CP值的 科技大樓美食 通通列入口袋清單，讓你的肚子和錢包都不再消瘦。</p>
+                                    <a href="#" class="read-more">Continue Reading..</a>
+                                </div>
+                            </div>
+                        </div> <!--col-->
+
+                        <!-- Single Post -->
+                        <div class="col-12 col-lg-4 col-md-12">
+                            <div class="single-post wow fadeInUp" data-wow-delay=".4s">
+                                <!-- Post Thumb -->
+                                <div class="post-thumb">
+                                    <img src="https://miro.medium.com/max/2050/1*Wt2Tph3Ce0v5tjOCyXAJuQ.png" alt="">
+                                </div>
+                                <!-- Post Content -->
+                                <div class="post-content">
+                                    <div class="post-meta d-flex">
+                                        <div class="post-author-date-area d-flex">
+                                            <!-- Post Author -->
+                                            <div class="post-author">
+                                                <a href="#">By Wisely</a>
+                                            </div>
+                                            <!-- Post Date -->
+                                            <div class="post-date">
+                                                <a href="#">Jun 16, 2020</a>
+                                            </div>
+                                        </div>
+                                        <!-- Post Comment & Share Area -->
+                                        <div class="post-comment-share-area d-flex">
+                                            <!-- Post Favourite -->
+                                            <div class="post-favourite">
+                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
+                                            </div>
+                                            <!-- Post Comments -->
+                                            <div class="post-comments">
+                                                <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
+                                            </div>
+                                            <!-- Post Share -->
+                                            <div class="post-share">
+                                                <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <h4 class="post-headline">科技大樓美食整理(2022)</h4>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="single-post wow fadeInUp" data-wow-delay=".4s">
+                                <!-- Post Thumb -->
+                                <div class="post-thumb">
+                                    <img src="https://ladymoko.com/wp-content/uploads/20171215200906_93.jpg" alt="">
+                                </div>
+                                <!-- Post Content -->
+                                <div class="post-content">
+                                    <div class="post-meta d-flex">
+                                        <div class="post-author-date-area d-flex">
+                                            <!-- Post Author -->
+                                            <div class="post-author">
+                                                <a href="#">By Marian</a>
+                                            </div>
+                                            <!-- Post Date -->
+                                            <div class="post-date">
+                                                <a href="#">May 19, 2017</a>
+                                            </div>
+                                        </div>
+                                        <!-- Post Comment & Share Area -->
+                                        <div class="post-comment-share-area d-flex">
+                                            <!-- Post Favourite -->
+                                            <div class="post-favourite">
+                                                <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
+                                            </div>
+                                            <!-- Post Comments -->
+                                            <div class="post-comments">
+                                                <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
+                                            </div>
+                                            <!-- Post Share -->
+                                            <div class="post-share">
+                                                <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <h4 class="post-headline">捷運科技大樓站美食整理</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div> <!--col-->
+                    </div><!--row-->
+                </div> <!--col-->
+            </div> <!--row-->
+        </div>
+    </section>
+    <!-- ****** 精選文章區 end ****** -->
+
+    <!-- ****** 食記 Start ****** -->
+    <section class="blog_area section_padding_0_50">
+        <div class="container">
+            <div class="row ">
+                <h1 class=" newfoodpost text-center mt-3 pt-3 pb-5">最新食記</h1>
+
+                    <!-- Single Slide -->
+                        <div class="card mt-3" style="width: 17rem; ">
+                             <img class="i-size" src="http://farm9.staticflickr.com/8537/8626812627_9d8c82b66f_b.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <h5 class="text-center">在地必吃｜阿英海產粥</h5>
+                                    這個粥已經是一種傳奇的地步，因為要預約才吃的到。不然現場等到死也等不太到
+                                    海產粥的料相當足，湯頭也好，海鮮麵也是相當好吃
+                                    是絕對值得一試的店家
+                                </p>
+                                <div class="date_author ">2022/6/10 by abc567 </div>
+                                <div class="d-flex justify-content-center mt-4">
+                                    <a href="#" class="read-more">Continue Reading..</a>
+                                </div>
+                            </div>
+                        </div>
+                  
+                   
+                        <div class="card mt-3" style="width: 17rem; ">
+                            <img class="i-size" src="https://farm1.staticflickr.com/465/31724621603_b0d91d8338_c.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <h5 class="text-center">不可不吃的小川拉麵</h5>
+                                    捷運科技大樓站，許多美食的聚集地
+                                    這裡是文湖線很久就有的站，附近有相當多美食，主因是它離台大辛亥路後門不遠，然後附近又有國立臺北教育大學···
+                                </p>
+                                <div class="date_author ">2022/6/10 by abc567 </div>
+                                <div class="d-flex justify-content-center mt-4">
+                                    <a href="#" class="read-more">Continue Reading..</a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    
+                        <div class="card mt-3" style="width: 17rem; ">
+                          <img class="i-size" src="https://nash.tw/wp-content/uploads/20220314-IMG_9853-scaled.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <p class="card-text">
+                                <h5 class="text-center">科技大樓。米提銀行</h5>
+                                飲料推薦大家可以喝喝看這家《米堤銀行》，這家鮮奶茶專賣店，打的是小農鮮奶、珍珠等強項，目前雖然只有少少的三家店，但生意都不算差，也有固定的客群
+                            </p>
+                            <div class="date_author">2022/6/10 by abc567 </div>
+                            <div class="d-flex justify-content-center mt-4">
+                                <a href="#" class="read-more">Continue Reading..</a>
+                            </div>
+                          </div>
+                        </div>
+                    
+                   
+                        <div class="card mt-3" style="width: 17rem; ">
+                            <img class="i-size" src="https://live.staticflickr.com/65535/50341120968_549d26b8d2_h.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <h5 class="text-center">搗飛豆花</h5>
+                                    搗飛豆花是一間用料還滿實在的冰品甜點店，糖水、豆漿本身的甜度不會太高，也可以依照自己的習慣調整甜度，這點對不喜歡太甜的我們相當加分！
+                                </p>
+                                <div class="date_author ">2022/6/10 by abc567 </div>
+                                <div class="d-flex justify-content-center mt-4">
+                                    <a href="#" class="read-more">Continue Reading..</a>
+                                </div>
+                            </div>
+                        </div>
+               <!--welcome-post-sliders-->
+            </div> <!--食記row-->  
+        </div> <!--container-->
+    </section>
+    <!-- ****** 食記 end ****** -->
+
+
+
+
+    <!-- ****** 團購美食 Start ****** -->
+    <section class="categories_area clearfix" id="about">
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center pb-5">熱門團購美食</h1>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5">
+                    <div class="single_catagory wow fadeInUp" data-wow-delay=".3s">
+                        <img class="groupbuy_i" src="https://cs-d.ecimg.tw/items/DBARA0A900C3CMM/000001_1639549533.jpg" alt="">
+                    </div>
+                    <div class="addbuy_btn justify-content-center d-flex">
+                        <button type="button" class="btn btn-outline-dark" style="width: 50%;">我  要  參  團</button>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5">
+                    <div class="single_catagory wow fadeInUp" data-wow-delay=".6s">
+                        <img class="groupbuy_i" src="https://cs-e.ecimg.tw/items/DBAC06A900A536E/000001_1637304484.jpg" alt="">
+                    </div>
+                    <div class="addbuy_btn justify-content-center d-flex">
+                        <button type="button" class="btn btn-outline-dark" style="width: 50%;">我  要  參  團</button>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-5">
+                    <div class="single_catagory wow fadeInUp" data-wow-delay=".9s">
+                        <img class="groupbuy_i" src="https://cs-d.ecimg.tw/items/DBAR5IA90089O6G/000001_1512007507.jpg" alt="">
+                    </div>
+                    <div class="addbuy_btn justify-content-center d-flex">
+                        <button type="button" class="btn btn-outline-dark" style="width: 50%;">我  要  參  團</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ****** 團購美食 end ****** -->
+
+    <!-- ****** 其他照片分享 Start ****** -->
+    <div class="container section_padding_0_50 ">
+        <div class="row">
+            <h1 class="text-center mt-3 pt-5 pb-5">更多分享</h1>
+            <div class="col">
+                <div class="instargram_area owl-carousel section_padding_100_0 clearfix " id="portfolio">
+       
+                    <!-- Instagram Item -->
+                    <div class="instagram_gallery_item">
+                        <!-- Instagram Thumb -->
+                        <img src="{% static 'base/img/instagram-img/1.jpg' %}" alt="">
+                        <!-- Hover -->
+                        <div class="hover_overlay">
+                            <div class="yummy-table">
+                                <div class="yummy-table-cell">
+                                    <div class="follow-me text-center">
+                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Item -->
+                    <div class="instagram_gallery_item">
+                        <!-- Instagram Thumb -->
+                        <img src="./../../static/base/img/instagram-img/2.jpg" alt="">
+                        <!-- Hover -->
+                        <div class="hover_overlay">
+                            <div class="yummy-table">
+                                <div class="yummy-table-cell">
+                                    <div class="follow-me text-center">
+                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Item -->
+                    <div class="instagram_gallery_item">
+                        <!-- Instagram Thumb -->
+                        <img src="./../../static/base/img/instagram-img/3.jpg" alt="">
+                        <!-- Hover -->
+                        <div class="hover_overlay">
+                            <div class="yummy-table">
+                                <div class="yummy-table-cell">
+                                    <div class="follow-me text-center">
+                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Item -->
+                    <div class="instagram_gallery_item">
+                        <!-- Instagram Thumb -->
+                        <img src="./../../static/base/img/instagram-img/4.jpg" alt="">
+                        <!-- Hover -->
+                        <div class="hover_overlay">
+                            <div class="yummy-table">
+                                <div class="yummy-table-cell">
+                                    <div class="follow-me text-center">
+                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Item -->
+                    <div class="instagram_gallery_item">
+                        <!-- Instagram Thumb -->
+                        <img src="./../../static/base/img/instagram-img/5.jpg" alt="">
+                        <!-- Hover -->
+                        <div class="hover_overlay">
+                            <div class="yummy-table">
+                                <div class="yummy-table-cell">
+                                    <div class="follow-me text-center">
+                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Item -->
+                    <div class="instagram_gallery_item">
+                        <!-- Instagram Thumb -->
+                        <img src="./../../static/base/img/instagram-img/6.jpg" alt="">
+                        <!-- Hover -->
+                        <div class="hover_overlay">
+                            <div class="yummy-table">
+                                <div class="yummy-table-cell">
+                                    <div class="follow-me text-center">
+                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Item -->
+                    <div class="instagram_gallery_item">
+                        <!-- Instagram Thumb -->
+                        <img src="./../../static/base/img/instagram-img/1.jpg" alt="">
+                        <!-- Hover -->
+                        <div class="hover_overlay">
+                            <div class="yummy-table">
+                                <div class="yummy-table-cell">
+                                    <div class="follow-me text-center">
+                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Item -->
+                    <div class="instagram_gallery_item">
+                        <!-- Instagram Thumb -->
+                        <img src="./../../static/base/img/instagram-img/2.jpg" alt="">
+                        <!-- Hover -->
+                        <div class="hover_overlay">
+                            <div class="yummy-table">
+                                <div class="yummy-table-cell">
+                                    <div class="follow-me text-center">
+                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Follow me</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ****** 其他照片分享 end ****** -->
+{% endblock %}
+
+
+    

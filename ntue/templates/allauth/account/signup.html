@@ -1,0 +1,69 @@
+{% extends "account/base.html" %}
+{% load widget_tweaks %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+
+      
+            <h1 class="text-100 text-center">{% trans "Sign Up" %}</h1>
+            <form class="signup mb-3" id="signup_form" method="post" action="{% url 'account_signup' %}">
+              {% csrf_token %}
+              {% for hidden_field in form.hidden_field %}
+                {{ hidden_field}}
+              {% endfor %}
+
+              
+              {% if form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">
+                  {% for error in form.non_field_errors %}
+                    {{ error }}
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              {% for field in form.visible_fields %}
+                <div class="mt-2 mb-2 form-group">
+                  
+                  {% if form.is_bound %}
+                    {% if field.errors %}
+                      {% render_field field class="form-control is-invalid" %}
+                      {% for error in field.errors %}
+                        <div class=" invalid-feedback">
+                          {{ error }}
+                        </div>
+                      {% endfor %}
+                    {% else %}
+                        {% render_field field class="form-control is-invalid"%}
+                    {% endif %}
+                  {% else %}
+                  {% render_field field class="form-control"%}
+                  {% endif %}
+
+                  {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                  {% endif %}
+                </div>
+              {% endfor %}
+
+              
+              
+              <!--{{ form.as_p }}-->
+              {% if redirect_field_value %}
+              <input class="form-control input-box form-ensurance-header-control" type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+              {% endif %}
+              <div class="col-6 d-grid">
+                <button class="btn btn-primary text-white rounded-pill mt-1" style="background-color: #37517e;" type="submit">{% trans "Sign Up" %} &raquo;</button>
+              </div>
+            </form>
+            
+            <p>{% blocktrans %}Already have an account? Then please 
+              
+                <a class="btn mb-1 text-white rounded-pill text-white" style="background-color: #37517e;" href="{{ login_url }}">
+                  sign in
+                </a>
+              .{% endblocktrans %}
+            </p>
+          
+{% endblock %}
