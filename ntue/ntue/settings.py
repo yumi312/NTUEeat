@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'base',
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # TLS Port
@@ -64,7 +64,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'tizhuan94@gmail.com'
 # Application Key
-EMAIL_HOST_PASSWORD = 'zwfttcsonzvgpshn'
+EMAIL_HOST_PASSWORD = 'fdrxyvbrfvstcjcq'
 LOGIN_REDIRECT_URL = '/'
 
 AUTHENTICATION_BACKENDS = (
