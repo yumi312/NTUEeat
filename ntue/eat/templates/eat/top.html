@@ -1,0 +1,264 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+    
+<link href="../../static/base/css/top.css" rel="stylesheet">
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2  sidebar mt-5  text-center "> 
+            
+                    <div class=" gb_class mb-3">熱門店家</div>
+                    <p class="fw-bold">全部</p>
+                    <p>手搖飲</p>
+                    <p>美式</p>
+                    <p>日式</p>
+                    <p>韓式</p>
+                    <p>中式</p>
+                    <p>甜點</p>
+                    <p>小吃</p>
+                    <p>火鍋</p>
+                    <p>吃到飽</p>
+                    <p>咖啡廳</p>
+                    <p>其他</p>
+
+                 
+
+
+                    
+
+
+
+
+                </div>
+           
+
+            
+            <div class="col-10">
+                <div class="container text-center color-top">
+                    <div class="row ">
+                        <div class="col-2   mt-5 ">
+                           
+             
+                        </div> 
+
+                        <div class="col-1   mt-5 ">
+                           排名
+             
+                        </div> 
+
+                        <div class="col-3   mt-5 ">
+                           店名
+             
+                        </div> 
+                        <div class="col-2   mt-5 ">
+                           評價
+             
+                        </div> 
+                        <div class="col-2   mt-5 ">
+                           應援
+             
+                        </div> 
+                        <div class="col-1 mt-5">
+                            收藏
+                        </div>
+                        <div class="col-1   mt-5 ">
+                           AI評分
+             
+                        </div> 
+                    </div>
+
+
+
+                    
+
+
+                    <div class="row d-flex align-items-center ">
+                        <div class="col-2   mt-5 ">
+                           <img src="https://lh5.googleusercontent.com/p/AF1QipOPMmwkPOX0ZkEYSL91iIz2XZ942V-AxGU-UcEM=w408-h272-k-no" alt="" style="width: 4.5rem;height: 4.5rem;">
+             
+                        </div> 
+
+                        <div class="col-1 fw-bold mt-5  top-1">
+                           1
+             
+                        </div> 
+
+                        <div class="col-3   mt-5 ">
+                           <a class="text-reset" href="https://www.google.com/maps/place/春山茶水舖/@25.0238974,121.5413786,17z/data=!3m1!4b1!4m5!3m4!1s0x3442aa2edadcf785:0x678c3202db1d4370!8m2!3d25.0238974!4d121.5435673">春山茶水</a>
+             
+                        </div> 
+                        <div class="col-2   mt-5 ">
+                           
+                        <i class="fa fa-star" aria-hidden="true"></i> 4.7/5
+                        </div> 
+                        <div class="col-2   mt-5 ">
+                         <i class="fa fa-thumbs-o-up " aria-hidden="true" id='shop1_good'></i>
+                         <i class="fa fa-thumbs-o-down" aria-hidden="true" id='shop1_bad'></i>
+             
+                        </div> 
+                        <div class="col-1   mt-5 ">
+                           <i class="fa fa-heart-o" aria-hidden="true" id="shop1_like"></i>
+             
+                        </div> 
+                        
+                    </div>
+
+                    <div class="row d-flex align-items-center">
+                        <div class="col-2   mt-5 ">
+                           <img src="https://lh5.googleusercontent.com/p/AF1QipNVCusCEVnBX-MVtHG1rXPbeKyxtC-kqZspzs4Y=w426-h240-k-no" alt="" style="width: 4.5rem;height: 4.5rem;">
+             
+                        </div> 
+
+                        <div class="col-1 fw-bold  mt-5 top-2">
+                           2
+             
+                        </div> 
+
+                        <div class="col-3   mt-5 ">
+                           <a class="text-reset" href="https://www.google.com/maps/place/山焙+SUNBAY+和平臥龍店/@25.0252501,121.545655,18.92z/data=!3m1!5s0x3442aa2edaf77977:0x64636d405fb71bc1!4m12!1m6!3m5!1s0x3442aa2edadcf785:0x678c3202db1d4370!2z5pil5bGx6Iy25rC06IiW!8m2!3d25.0238974!4d121.5435673!3m4!1s0x3442ab9820be64d7:0xd3dfb4fabd3790f5!8m2!3d25.0248019!4d121.5464315">山焙 SUNBAY 和平臥龍店</a>
+             
+                        </div> 
+                        <div class="col-2   mt-5 ">
+                           
+                        <i class="fa fa-star" aria-hidden="true"></i> 4.7/5
+                        </div> 
+                        <div class="col-2   mt-5 ">
+                         <i class="fa fa-thumbs-o-up " aria-hidden="true" id='shop2_good'></i>
+                         <i class="fa fa-thumbs-o-down" aria-hidden="true" id='shop2_bad'></i>
+             
+                        </div> 
+                        <div class="col-1   mt-5 ">
+                           <i class="fa fa-heart-o" aria-hidden="true"></i>
+             
+                        </div> 
+                        
+                    </div>
+
+
+                    <div class="row d-flex align-items-center">
+                        <div class="col-2   mt-5 ">
+                           <img src="https://lh5.googleusercontent.com/p/AF1QipOXygDLXe1OEWDHxbOxdZyveMqLQNhWw2D3VyDs=w408-h543-k-no" alt="" style="width: 4.5rem;height: 4.5rem;">
+             
+                        </div> 
+
+                        <div class="col-1  fw-bold mt-5 top-3">
+                           3
+             
+                        </div> 
+
+                        <div class="col-3   mt-5 ">
+                           <a class="text-reset" href="https://www.google.com/maps/place/甘蔗の媽媽-科技大樓店/@25.024773,121.5450649,20z/data=!3m1!5s0x3442aa2e86062063:0xcac5fa669de228fe!4m12!1m6!3m5!1s0x3442aa2edadcf785:0x678c3202db1d4370!2z5pil5bGx6Iy25rC06IiW!8m2!3d25.0238974!4d121.5435673!3m4!1s0x0:0x826560e767e42638!8m2!3d25.0249796!4d121.5451726">甘蔗の媽媽-科技大樓店</a>
+             
+                        </div> 
+                        <div class="col-2   mt-5 ">
+                           
+                        <i class="fa fa-star" aria-hidden="true"></i> 4.7/5
+                        </div> 
+                        <div class="col-2   mt-5 ">
+                         <i class="fa fa-thumbs-o-up " aria-hidden="true"></i>
+                         <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+             
+                        </div> 
+                        <div class="col-1   mt-5 ">
+                           <i class="fa fa-heart-o" aria-hidden="true"></i>
+             
+                        </div> 
+                        
+                    </div>
+
+                    <div class="row d-flex align-items-center">
+                        <div class="col-2   mt-5 ">
+                           <img src="https://lh5.googleusercontent.com/p/AF1QipNPHVK3hiKtZM-I-QIqDuvfVWdf9bpO-U0gk41Q=w426-h240-k-no" alt="" style="width: 4.5rem;height: 4.5rem;">
+             
+                        </div> 
+
+                        <div class="col-1 fw-bold  mt-5 ">
+                           4
+             
+                        </div> 
+
+                        <div class="col-3   mt-5 ">
+                           <a class="text-reset" href="https://www.google.com/maps/place/可不可熟成紅茶+科技大樓店/@25.024773,121.5450649,20z/data=!3m1!5s0x3442aa2edaf77977:0x64636d405fb71bc1!4m12!1m6!3m5!1s0x3442aa2edadcf785:0x678c3202db1d4370!2z5pil5bGx6Iy25rC06IiW!8m2!3d25.0238974!4d121.5435673!3m4!1s0x0:0x94818e490127c4a4!8m2!3d25.0249697!4d121.5450054">可不可熟成紅茶 科技大樓店</a>
+             
+                        </div> 
+                        <div class="col-2   mt-5 ">
+                           
+                        <i class="fa fa-star" aria-hidden="true"></i> 4.7/5
+                        </div> 
+                        <div class="col-2   mt-5 ">
+                         <i class="fa fa-thumbs-o-up " aria-hidden="true"></i>
+                         <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+             
+                        </div> 
+                        <div class="col-1   mt-5 ">
+                           <i class="fa fa-heart-o" aria-hidden="true"></i>
+             
+                        </div> 
+                        
+                    </div>
+
+                    <div class="row d-flex align-items-center">
+                        <div class="col-2   mt-5 ">
+                           <img src="https://lh5.googleusercontent.com/p/AF1QipOLItCKzlO6HB5JlysSnIsfPiHGzcrdBQHV8bH3=w408-h544-k-no" alt="" style="width: 4.5rem;height: 4.5rem;">
+             
+                        </div> 
+
+                        <div class="col-1 fw-bold  mt-5 ">
+                           5
+             
+                        </div> 
+
+                        <div class="col-3   mt-5 ">
+                           <a class="text-reset" href="https://www.google.com/maps/place/烏弄原生茶飲+科技大樓店/@25.0251066,121.544314,19.67z/data=!3m1!5s0x3442aa2e962e3d4f:0xf5b15fe2db6f144b!4m12!1m6!3m5!1s0x3442aa2edadcf785:0x678c3202db1d4370!2z5pil5bGx6Iy25rC06IiW!8m2!3d25.0238974!4d121.5435673!3m4!1s0x0:0xf5ba5984bbdaf13b!8m2!3d25.0249362!4d121.5441319">烏弄原生茶飲 科技大樓店</a>
+             
+                        </div> 
+                        <div class="col-2   mt-5  ">
+                           
+                        <i class="fa fa-star" aria-hidden="true"></i> 4.7/5
+                        </div> 
+                        <div class="col-2   mt-5 ">
+                         <i class="fa fa-thumbs-o-up " aria-hidden="true"></i>
+                         <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+             
+                        </div> 
+                        <div class="col-1   mt-5 ">
+                           <i class="fa fa-heart-o" aria-hidden="true"></i>
+             
+                        </div> 
+                        
+                    </div>
+
+
+
+
+                </div>
+
+                
+
+
+            </div>
+            
+
+
+
+                
+
+
+
+
+
+
+
+
+
+                 
+        </div> <!--row-->
+
+            
+    </div> <!--container-->
+
+{% endblock %}
+
+
+

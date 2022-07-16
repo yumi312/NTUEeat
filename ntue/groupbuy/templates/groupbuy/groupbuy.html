@@ -1,0 +1,415 @@
+{% extends 'base/base1.html' %}
+{% load static %}
+{% block content %}
+    
+<link href="../../static/base/css/gb.css" rel="stylesheet">
+    
+    <nav class="navbar navbar-expand-lg gb_nav navbar-light ">
+      <div class=" gb_bgc container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">首頁</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">團購商品</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/eat/forum/">討論區</a>
+            </li>
+          </ul>
+          
+
+          <div class="search_block">
+              <div class="newsletter-form me-4" style="width: 350px;">
+                <form action="#" method="post">
+                    <input type="email" name="newsletter-email" id="email" placeholder="搜尋關鍵字" style="height: 2.3rem;" >
+                    <button type="submit" style="height: 2.3rem; width: 2.3rem;" ><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+        </div>
+
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="https://www.freemart.com.tw/file_manager/uimage/ufile/images/bsn2368/1180_450.jpg" class="d-block " alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="https://www.freemart.com.tw/file_manager/uimage/ufile/images/bsn1522/1180_450(5).jpg" class="d-block " alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="https://www.freemart.com.tw/file_manager/uimage/ufile/images/bsn1310/1180_450(1).jpg" class="d-block " alt="...">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+        
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3  sidebar mt-5  text-center "> 
+            
+                <div class="">
+                    <h6 class=" mb-3">全部</h6>
+                    <div class=" gb_class mb-3">最新活動</div>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+              
+
+                    <div class=" gb_class mb-3">熱門團購</div>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                 
+
+
+                    <div class=" gb_class mb-3">食品美食</div>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                   
+
+
+                    <div class=" gb_class mb-3">生活用品</div>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+                    <p>肉乾</p>
+
+                    <div class=" gb_class mb-3">其他</div>
+
+
+                    <div class="recomm">
+                        <hr class="mt-5 mb-5">
+                         <div class=" guess_like mb-5">猜你喜歡</div>
+
+                         <div class="recomm_goods mb-3">
+                             <img class="recomm_goods_image" src="https://www.ihergo.com/photo/product/02/300_1397402_1656392699986.jpg" alt="">
+                             <div class="recomm_goods_title">麻辣鴨血</div>
+                             <div class="recomm_goods_price">$99</div>
+                         </div>
+
+                         <div class="recomm_goods mb-3">
+                             <img class="recomm_goods_image" src="https://www.ihergo.com/photo/product/11/300_11_1632992278934.jpg" alt="">
+                             <div class="recomm_goods_title">經典雞塊</div>
+                             <div class="recomm_goods_price">$69</div>
+                         </div>
+
+                         <div class="recomm_goods mb-3">
+                             <img class="recomm_goods_image" src="https://www.ihergo.com/photo/product/11/300_11_1631862690125.jpg" alt="">
+                             <div class="recomm_goods_title">挪威當季鮮蝦</div>
+                             <div class="recomm_goods_price">$599</div>
+                         </div>
+
+                         <div class="recomm_goods mb-3">
+                             <img class="recomm_goods_image" src="https://www.ihergo.com/photo/product/11/300_11_1563526051666.jpg" alt="">
+                             <div class="recomm_goods_title">ㄚ嬤珍藏的巧克力塔</div>
+                             <div class="recomm_goods_price">$79</div>
+                         </div>
+                        
+                    </div>
+
+
+                </div>
+            </div>
+
+            
+
+            <div class="col-9 main mt-5 ss">
+                
+
+                <h2 class="text-center">最新活動</h2>
+                <div class="gb_goods mt-5">
+                    <div class="card" >
+                        <img src="https://www.freemart.com.tw/file_manager/uimage/ufile/images/bsn2365/1180_450.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">惠香中元限定超值拜拜箱(加贈普渡旗)</h5>
+                            <p class="card-text">拜拜其實很簡單! 惠香中元限定超值拜拜箱~加贈普渡旗應景好禮誠意滿滿~超過30年零嘴老店〝惠香〞陪你普渡！想吃花生.豆干.鱈魚香絲.葵瓜子~就買這一箱~</p>
+                            <div class="d-flex ">
+
+                                <h4 class="me-auto text-danger">＄699</h4>
+                                <div class="buyer_num mt-2 pe-2">10人參團</div>
+
+                                <a href="#" class="btn btn-outline-danger" style="height: 35px; width: 42px;"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+
+                               
+                            </div>
+                            <a href="#" class="btn btn-warning mt-3" style=" height: 35px; width: 100%;"><i class="fa fa-cart-arrow-down pe-2" aria-hidden="true"></i>加入購物車</a>
+
+
+
+
+                        </div>
+                    </div>     
+                </div>
+
+                <div class="gb_goods mt-5">
+                    <div class="card" >
+                        <img src="https://www.freemart.com.tw/file_manager/uimage/ufile/images/bsn182/1180_450(1).jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">炎記腐乳泡菜(獨家風味)</h5>
+                            <p class="card-text">特有的腐乳口感以及優酪乳的順滑細緻，腐乳杏鮑菇為本店之招牌，所使用新社菇園所栽培的杏鮑菇，搭配獨門醬料醃製，口感十足Q彈有嚼勁，絕對讓你大呼過癮!好吃！再來一口～</p>
+                            <div class="d-flex justify-content-end">
+
+                                <h4 class="me-auto text-danger">＄1399</h4>
+                                <div class="buyer_num mt-2 pe-2">3人參團</div>
+
+                                <a href="#" class="btn btn-outline-danger" style="height: 35px; width: 42px;"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+
+                               
+                            </div>
+                            <a href="#" class="btn btn-warning mt-3" style=" height: 35px; width: 100%;"><i class="fa fa-cart-arrow-down pe-2" aria-hidden="true"></i>加入購物車</a>
+                                 
+                        </div>
+                    </div>
+                </div>   
+
+                <div class="gb_goods mt-5">
+                    <div class="card" >
+                        <img src="https://www.freemart.com.tw/file_manager/uimage/ufile/images/bsn2240/1180_450.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">艾格諾蛋捲夾心蛋捲</h5>
+                            <p class="card-text">艾格諾先生的堅持！ 《手作的溫度，微甜的幸福》真材實料純手工夾心蛋捲，襲捲你的味蕾~口感酥脆、香氣四溢、齒頰留香、多種口味</p>
+                            <div class="d-flex justify-content-end">
+
+                                <h4 class="me-auto text-danger">＄799</h4>
+                                <div class="buyer_num mt-2 pe-2">396人參團</div>
+
+                                <a href="#" class="btn btn-outline-danger" style="height: 35px; width: 42px;"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+
+                               
+                            </div>
+                            <a href="#" class="btn btn-warning mt-3" style=" height: 35px; width: 100%;"><i class="fa fa-cart-arrow-down pe-2" aria-hidden="true"></i>加入購物車</a>
+                                 
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                
+                <div class="ct_top mt-5">
+                    <h3 class=" act_title text-center pt-3 pb-3">熱門團購</h3>
+
+                    <div class="d-flex jj pb-5 ">
+
+                        <a href="" class="d-flex align-items-center text-black"> <i class="fa fa-angle-double-left " aria-hidden="true"></i></a>
+
+                        <div class="card br-20 " style="width: 200px;" >
+                          <div class="d-flex justify-content-center">
+                                <img class="top_good_image" src="https://www.ihergo.com/photo/product/11/300_11_1512710978135.jpg" class="card-img-top1" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <div class="gb_top_card-title">好吃甜點</div>
+                                <div class="gb_top_card-price text-center">$59</div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="btn btn-warning add_gb_btn text-color1">我要參團</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card br-20" style="width: 200px;">
+                            <div class="d-flex justify-content-center">
+                                <img class="top_good_image" src="https://www.ihergo.com/photo/product/54/300_1025754_1650255107064.jpg" class="card-img-top1" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <div class="gb_top_card-title">高粱牛肉麵</div>
+                                <div class="gb_top_card-price text-center">$59</div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="btn btn-warning add_gb_btn text-color1">我要參團</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="card br-20 " style="width: 200px;">
+                            <div class="d-flex justify-content-center">
+                                <img class="top_good_image " src="https://www.ihergo.com/photo/product/11/300_11_1656648587535.jpg" class="card-img-top1" alt="...">
+                            </div>
+                            <div class="card-body" >
+                                <div class="gb_top_card-title">天然野生桑葚果</div>
+                                <div class="gb_top_card-price text-center">$59</div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="btn btn-warning add_gb_btn text-color1">我要參團</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card br-20 " style="width: 200px; ">
+                            <div class="d-flex justify-content-center">
+                                <img class="top_good_image" src="https://www.ihergo.com/photo/product/11/300_11_1555762294225.jpg" class="card-img-top1" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <div class="gb_top_card-title">豆酥朋泡芙</div>
+                                <div class="gb_top_card-price text-center">$59</div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="btn btn-warning add_gb_btn text-color1">我要參團</a>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <a href="" class="d-flex align-items-center text-black"> <i class="fa fa-angle-double-right " aria-hidden="true"></i></a>
+                        
+
+                    </div>
+
+                </div>
+
+
+                <div class="ct_top mt-5">
+                    <h3 class="act_title text-center pt-3 pb-3">限時最低價</h3>
+
+                    <div class="d-flex jj pb-5 ">
+
+                        <a href="" class="d-flex align-items-center text-black"> <i class="fa fa-angle-double-left " aria-hidden="true"></i></a>
+
+                        <div class="card br-20 " style="width: 200px;" >
+                          <div class="d-flex justify-content-center">
+                                <img class="top_good_image" src="https://www.ihergo.com/photo/product/11/300_11_1592531872058.jpg" class="card-img-top1" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <div class="gb_top_card-title">月亮蝦餅</div>
+                                <div class="gb_top_card-price text-center">$59</div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="btn btn-warning add_gb_btn text-color1">我要參團</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card br-20" style="width: 200px;">
+                            <div class="d-flex justify-content-center">
+                                <img class="top_good_image" src="https://www.ihergo.com/photo/product/18/300_1271218_1656390439483.jpg" class="card-img-top1" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <div class="gb_top_card-title">翡翠檸檬</div>
+                                <div class="gb_top_card-price text-center">$59</div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="btn btn-warning add_gb_btn text-color1">我要參團</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="card br-20 " style="width: 200px;">
+                            <div class="d-flex justify-content-center">
+                                <img class="top_good_image " src="https://www.ihergo.com/photo/product/34/300_451334_1655654011645.jpg" class="card-img-top1" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <div class="gb_top_card-title">超人氣起士肉捲</div>
+                                <div class="gb_top_card-price text-center">$59</div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="btn btn-warning add_gb_btn text-color1">我要參團</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card br-20 " style="width: 200px; ">
+                            <div class="d-flex justify-content-center">
+                                <img class="top_good_image" src="https://www.ihergo.com/photo/product/11/300_11_1590128254976.jpg" class="card-img-top1" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <div class="gb_top_card-title " >喀滋酥脆雞腿排</div>
+                                <div class="gb_top_card-price text-center">$59</div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="btn btn-warning add_gb_btn text-color1">我要參團</a>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <a href="" class="d-flex align-items-center text-black"> <i class="fa fa-angle-double-right " aria-hidden="true"></i></a>
+                        
+
+                    </div>
+
+                </div>
+
+
+
+                    
+            </div> <!--col-->
+
+
+
+                
+
+
+
+
+
+
+
+
+
+                <div class="fixed-bottom">
+                    <div class=" d-flex justify-content-end ">
+                        <div class="add_gb fz-14">我要<br>開團</div>
+                       
+                </div> 
+
+                <div class=" d-flex justify-content-end  ">
+                        
+                        <div class="shopcar_icon"><i class="fa fa-shopping-cart fz-30 " aria-hidden="true"></i></div>
+                </div> 
+
+               </div>
+                 
+            </div>
+
+            
+        </div>
+
+       
+
+    </div>
+
+
+    
+{% endblock %}
+
+
+

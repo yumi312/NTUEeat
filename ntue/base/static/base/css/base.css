@@ -1,0 +1,465 @@
+/* ***** Fonts ***** */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700|Quicksand:300,400,500,700|Shadows+Into+Light+Two');
+
+/* ***** Import CSS ***** */
+
+@import 'bootstrap/bootstrap.min.css';
+@import 'others/animate.css';
+@import 'others/magnific-popup.css';
+@import 'others/meanmenu.min.css';
+@import 'others/owl.carousel.min.css';
+@import 'others/font-awesome.min.css';
+@import 'others/pe-icon-7-stroke.css';
+
+/* --------------------
+:: 1.0 Base CSS
+-------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    z-index: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: #232d37;
+    line-height: 1.25;
+}
+
+p {
+    color: #51545f;
+    font-size: 16px;
+}
+
+.section_padding_100 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.section_padding_100_70 {
+    padding-top: 100px;
+    padding-bottom: 70px;
+}
+
+.section_padding_50 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.section_padding_50_20 {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.section_padding_150 {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.section_padding_200 {
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.section_padding_80 {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.section_padding_80_50 {
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.section_padding_30_80 {
+    padding-top: 30px;
+    padding-bottom: 80px;
+}
+
+.section_padding_80_0 {
+    padding-top: 80px;
+    padding-bottom: 0;
+}
+
+.section_padding_0_50 {
+    padding-top: 0;
+    padding-bottom: 50px;
+}
+.section_padding_0_80 {
+    padding-top: 0;
+    padding-bottom: 80px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.fz-18{
+    font-size: 18px;
+}
+.fz-19{
+    font-size: 19px;
+}
+.fz-20{
+    font-size: 20px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mt-100 {
+    margin-top: 100px;
+}
+
+.mt-150 {
+    margin-top: 150px;
+}
+
+.mr-15 {
+    margin-right: 15px;
+}
+
+.mr-30 {
+    margin-right: 30px;
+}
+
+.mr-50 {
+    margin-right: 50px;
+}
+
+.mr-100 {
+    margin-right: 100px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.mb-100 {
+    margin-bottom: 100px;
+}
+
+.ml-15 {
+    margin-left: 15px;
+}
+
+.ml-30 {
+    margin-left: 30px;
+}
+
+.ml-50 {
+    margin-left: 50px;
+}
+
+.ml-100 {
+    margin-left: 100px;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+#scrollUp {
+    bottom: 55px;
+    font-size: 14px;
+    right: 50%;
+    width: 30px;
+    background-color: #fc6c3f;
+    color: #fff;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    margin-right: -15px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    font-weight: 500;
+    outline: none;
+}
+
+li {
+    list-style: none;
+}
+
+.heading_text > p {
+    font-size: 16px;
+}
+
+.heading_text > h2 {
+    font-weight: 500;
+    color: #333;
+}
+
+.heading_text > h3 {
+    color: #b4b4b4;
+    font-size: 90px;
+    font-weight: 100;
+    margin: 0;
+}
+
+
+.yummy-table {
+    display: table;
+    height: 100%;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.yummy-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+.fa-user-circle{
+    cursor: pointer;  
+}
+.fa-bell{
+    cursor: pointer;
+}
+.fa-heart{
+    color: #d48377;
+}
+.fa-comment{
+    color: #6478b0;
+}
+.fa-eye{
+    color: #a5a8a6;
+}
+
+.person_image{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.offcanvas{
+    width: 300px;
+}
+
+.level{
+    color:#6e6e6e;
+    font-size: 15px;
+}
+
+@-webkit-keyframes yummy-load {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes yummy-load {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* --------------------
+:: 2.0 Top Header Area CSS
+-------------------- */
+
+.top_header_area {
+    width: 100%;
+   
+    border-bottom: 1px solid #ebebeb;
+    background-color: #fff;
+}
+
+.top_header_area .top_social_bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 40px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+
+.top_header_area .top_social_bar > a {
+    font-size: 12px;
+    color: #232d37;
+    margin-right: 30px;
+}
+
+.top_header_area .top_social_bar > a:hover {
+    color: #fc6c3f;
+}
+
+.top_header_area .top_social_bar > a:last-of-type {
+    margin-right: 0;
+}
+
+.top_header_area .signup-search-area {
+    height: 40px;
+    position: relative;
+    z-index: 3;
+}
+
+.top_header_area .signup-search-area a {
+    font-size: 13px;
+    color: #222;
+}
+
+.top_header_area .signup-search-area .billboard a {
+    margin-right: 13px;
+    border-right: 2px solid #c2c2c2;
+    padding-right: 13px;
+    font-size: 15px;
+}
+
+.top_header_area .signup-search-area .groupbuy a {
+    font-size: 15px;
+}
+
+.login{
+    font-size: 15px;
+    margin-right: 1rem;
+   margin-left: 2rem;
+    
+
+}
+
+/* --------------------
+::  封面大圖大字 CSS
+-------------------- */
+
+.logo_area .ntue-logo {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 80px;
+    margin-bottom: 0;
+    padding: 35px 0 20px 0;
+    display: inline-block;
+    color: #232d37;
+}
+
+.cover_img{
+   width:100%;
+    height: 500px;
+    background-size: cover;
+}
+
+/* --------------------
+:: 選單頁面nav CSS
+-------------------- */
+
+
+
+.navbar.navbar-expand-lg {
+    padding: 0;
+    background-color:#f7f3f2;
+    width: 100%;
+}
+
+.navbar.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 18px 40px;
+    color: #232d37;
+    text-transform: uppercase;
+    font-size: 16px;
+
+}
+
+.navbar.navbar-expand-lg .navbar-nav .nav-link:hover,
+.navbar.navbar-expand-lg .navbar-nav .active .nav-link {
+    color: #fc6c3f;
+}
+
+
+/* --------------------
+:: Footer  CSS 
+-------------------- */
+
+.footer-content {
+    padding: 50px 0 65px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.footer-logo-area .yummy-logo {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 60px;
+    margin-bottom: 0;
+    padding: 0 0 20px 0;
+    display: inline-block;
+    color: #232d37;
+}
+
+.copy_right_text {
+    width: 100%;
+    height: 70px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.copy_right_text > p {
+    font-size: 14px;
+    color: #b5aec4;
+    margin-bottom: 0;
+}
+
+.footer_area .navbar.navbar-expand-lg .navbar-nav .nav-link {
+    padding-bottom: 0;
+}
+

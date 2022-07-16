@@ -52,7 +52,9 @@ INSTALLED_APPS = [
 
     #apps
     'eat',
+    'groupbuy',
     'base',
+    #'myaccount',
 ]
 
 SITE_ID = 2
@@ -66,6 +68,7 @@ EMAIL_HOST_USER = 'tizhuan94@gmail.com'
 # Application Key
 EMAIL_HOST_PASSWORD = 'fdrxyvbrfvstcjcq'
 LOGIN_REDIRECT_URL = '/'
+#LOGIN_REDIRECT_URL = '/accounts/profile/'
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',

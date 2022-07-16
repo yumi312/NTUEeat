@@ -1,0 +1,262 @@
+{% extends 'base/base1.html' %}
+{% load static %}
+{% block content %}
+    
+<link href="../../static/base/css/forum.css" rel="stylesheet">
+    
+    <div class="nav2 mb-5 ">
+        <div class=" d-flex justify-content-end">
+        </div>
+    </div>
+    
+    <div class="container-md">
+        <div class="row">
+            <div class="col-lg-7 col-sm-12">
+
+
+
+
+                <div class="sort d-flex mb-5 justify-content-center">
+                    <div class="sort1 d-flex  ">
+                        <p class="mt-2">排序：</p>
+                        <select class="form-select form-select-sm " aria-label=".form-select-sm example">
+                         <option selected >最熱門</option>
+                         <option value="1">最新</option>
+                         <option value="2">最多愛心</option>
+                         <option value="3">最多留言</option>
+                         <option value="4">最多觀看</option>
+                        </select>
+                    </div>
+
+                    <div class="sort2  d-flex">
+                    <p class="mt-2 ms-5">主題：</p>
+                        <select class="form-select form-select-sm  " aria-label=".form-select-sm example">
+                         <option selected>全部</option>
+                         <option value="1">美食</option>
+                         <option value="2">校園</option>
+                         <option value="3">團購</option>
+                        </select>
+                    </div>
+
+                    
+
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-sm-12 d-flex mb-5 justify-content-center">
+                    
+                        <div class="newsletter-form " style="width: 350px;">
+                            <form action="#" method="post">
+                                <input type="email" name="newsletter-email" id="email" placeholder="搜尋關鍵字" style="height: 2.3rem;" >
+                                <button type="submit" style="height: 2.3rem; width: 2.3rem;" ><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+
+        </div>
+    </div>
+    
+    <div class="container-xl">
+        <div class="row">
+            <!--討論區文章 start-->
+            <div class="col-1"></div>
+            <div class="col-md-8 col-sm-12 mt-3 pe-3">
+
+
+                <!---------單則post start--------->
+                    <div class="row post_row">
+                        <div class="col-8">
+                            <div class="d-flex">
+                                <img class="author-image mb-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-JDYllMOzDFu9efWWemyp5UABjsodiP52ZrNR4OdCFLdiCZNmAKkPb0SmYrmAIaMLk1o&usqp=CAU" alt="">
+                                <div class="pt-2 ps-2"> Ryan · 美食 · 2022/7/2 13:56</div>
+
+                            </div>
+                            
+                            <h5 class="pt-2">最近新發現一家好吃的餐廳！！</h5>
+                            <div>超級好吃不是我在說，大家都給我快去吃！</div>
+                            <div class="d-flex mt-4">
+                                <i class="fa fa-heart pe-2 " aria-hidden="true"> 10</i>
+                                <i class="fa fa-comment pe-2" aria-hidden="true"> 0</i>
+                                <i class="fa fa-eye pe-2" aria-hidden="true"> 30</i>
+                            </div>
+                        </div>
+
+                        <div class="col-4 align-self-center ">
+                            <i class="fa fa-bookmark-o justify-content-end d-flex fz-18 mt-1" aria-hidden="true"></i>
+
+                            <div class="div post_Image d-flex justify-content-end mt-3">
+                                <img class="post_image " src="https://api.elle.com.hk/var/ellehk/storage/images/beauty_and_health/top-10-protein-foods/35540268-6-chi-HK/_1_img_1040_780.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-4 mb-4">   
+                    <!---------單則post end--------->
+
+
+
+                    <!---------單則post start--------->
+                    <div class="row post_row">
+                        <div class="col-8">
+                            <div class="d-flex">
+                                <img class="author-image mb-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-JDYllMOzDFu9efWWemyp5UABjsodiP52ZrNR4OdCFLdiCZNmAKkPb0SmYrmAIaMLk1o&usqp=CAU" alt="">
+                                <div class="pt-2 ps-2"> Ryan · 校園 · 2022/7/1 17:56</div>
+                            </div>
+                            
+                            <h5 class="pt-2">請問有哪些涼課？</h5>
+                            <div>拜託推薦給我！！</div>
+                            <div class="d-flex mt-4">
+                                <i class="fa fa-heart pe-2 " aria-hidden="true"> 8</i>
+                                <i class="fa fa-comment pe-2" aria-hidden="true"> 3</i>
+                                <i class="fa fa-eye pe-2" aria-hidden="true"> 10</i>
+                            </div>
+                        </div>
+
+                        <div class="col-4 align-self-center ">
+                             <i class="fa fa-bookmark-o justify-content-end d-flex mt-1  fz-18" aria-hidden="true"></i>
+                            <div class="div post_Image d-flex  justify-content-end mt-3">
+                                <img class="post_image " src="https://memeprod.sgp1.digitaloceanspaces.com/user-template/36bd85cd7830bb0ccdcfdcdf61210d7e.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-4 mb-4">   
+                   <!---------單則post end--------->
+
+
+
+                   <!---------單則post start--------->
+                    <div class="row post_row">
+                        <div class="col-8">
+                            <div class="d-flex">
+                                <img class="author-image mb-2" src="https://i.pinimg.com/474x/4b/65/1d/4b651dcba31e093c3478d244e4c7c998.jpg" alt="">
+                                <div class="pt-2 ps-2"> Neo · 團購 · 2022/6/30 13:56</div>
+                            </div>
+                            
+                            <h5 class="pt-2">有人買過慢車肉乾嗎？好吃嗎？</h5>
+                            <div>最近在看慢車肉乾，有人買過嗎？推嗎？</div>
+                            <div class="d-flex mt-4">
+                                <i class="fa fa-heart pe-2 " aria-hidden="true"> 10</i>
+                                <i class="fa fa-comment pe-2" aria-hidden="true"> 0</i>
+                                <i class="fa fa-eye pe-2" aria-hidden="true"> 30</i>
+                            </div>
+                        </div>
+
+                        <div class="col-4 align-self-center ">
+                            <i class="fa fa-bookmark-o justify-content-end d-flex mt-1  fz-18" aria-hidden="true"></i>
+                            <div class="div post_Image d-flex  justify-content-end mt-3">
+                                <img class="post_image " src="https://s.yimg.com/zp/images/8320570A95AE1BC1A3AFF1B289B2716735423AB4" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-4 mb-4">   
+                    <!---------單則post end--------->
+
+
+                    <!---------單則post start--------->
+                    <div class="row post_row">
+                        <div class="col-8">
+                            <div class="d-flex">
+                                <img class="author-image mb-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-JDYllMOzDFu9efWWemyp5UABjsodiP52ZrNR4OdCFLdiCZNmAKkPb0SmYrmAIaMLk1o&usqp=CAU" alt="">
+                                <div class="pt-2 ps-2"> Ryan · 美食 · 2022/7/2 13:56</div>
+
+                            </div>
+                            
+                            <h5 class="pt-2">最近新發現一家好吃的餐廳！！</h5>
+                            <div>超級好吃不是我在說，大家都給我快去吃！</div>
+                            <div class="d-flex mt-4">
+                                <i class="fa fa-heart pe-2 " aria-hidden="true"> 10</i>
+                                <i class="fa fa-comment pe-2" aria-hidden="true"> 0</i>
+                                <i class="fa fa-eye pe-2" aria-hidden="true"> 30</i>
+                            </div>
+                        </div>
+
+                        <div class="col-4 align-self-center ">
+                            <i class="fa fa-bookmark-o justify-content-end d-flex fz-18 mt-1" aria-hidden="true"></i>
+
+                            <div class="div post_Image d-flex justify-content-end mt-3">
+                                <img class="post_image " src="https://api.elle.com.hk/var/ellehk/storage/images/beauty_and_health/top-10-protein-foods/35540268-6-chi-HK/_1_img_1040_780.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-4 mb-4">   
+                    <!---------單則post end--------->
+
+
+                    <!---------單則post start--------->
+                    <div class="row post_row">
+                        <div class="col-8">
+                            <div class="d-flex">
+                                <img class="author-image mb-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-JDYllMOzDFu9efWWemyp5UABjsodiP52ZrNR4OdCFLdiCZNmAKkPb0SmYrmAIaMLk1o&usqp=CAU" alt="">
+                                <div class="pt-2 ps-2"> Ryan · 美食 · 2022/7/2 13:56</div>
+
+                            </div>
+                            
+                            <h5 class="pt-2">最近新發現一家好吃的餐廳！！</h5>
+                            <div>超級好吃不是我在說，大家都給我快去吃！</div>
+                            <div class="d-flex mt-4">
+                                <i class="fa fa-heart pe-2 " aria-hidden="true"> 10</i>
+                                <i class="fa fa-comment pe-2" aria-hidden="true"> 0</i>
+                                <i class="fa fa-eye pe-2" aria-hidden="true"> 30</i>
+                            </div>
+                        </div>
+
+                        <div class="col-4 align-self-center ">
+                            <i class="fa fa-bookmark-o justify-content-end d-flex fz-18 mt-1" aria-hidden="true"></i>
+
+                            <div class="div post_Image d-flex justify-content-end mt-3">
+                                <img class="post_image " src="https://api.elle.com.hk/var/ellehk/storage/images/beauty_and_health/top-10-protein-foods/35540268-6-chi-HK/_1_img_1040_780.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mt-4 mb-4">   
+                    <!---------單則post end--------->    
+
+
+                         
+            </div>
+            <!--討論區文章 end-->
+
+
+        
+
+        <div class="col-md-2 col-sm-12 text-center">
+           
+            <h5 class="pb-3 ">熱門 #Hashtag</h5> 
+            <p>＃請益</p>
+            <p>＃新開幕</p>
+            <p>＃選課</p>
+            <p>＃新生</p>
+            <p>＃學餐</p>
+
+        </div>
+
+        <div class="col-1"></div>
+        </div>
+
+    </div>
+   
+    <!--分頁 start-->
+    <nav aria-label="..." class=" justify-content-center d-flex mt-5">
+      <ul class="pagination">
+         <li class="page-item">
+          <a class="page-link text-black" href="#"> << </a>
+        </li>
+        <li class="page-item"><a class="page-link text-black  p-active" href="#">1</a></li>
+        <li class="page-item " aria-current="page">
+          <a class="page-link text-black" href="#">2</a>
+        </li>
+        <li class="page-item"><a class="page-link text-black" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link text-black" href="#"> >> </a>
+        </li>
+      </ul>
+    </nav>
+    <!--分頁 end-->
+    
+{% endblock %}
+
+
+

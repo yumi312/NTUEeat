@@ -19,10 +19,10 @@
     <link rel="icon" href="../../static/base/img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
-    <link href="../../static/base/css/style.css" rel="stylesheet">
+    <link href="../../static/base/css/base.css" rel="stylesheet">
 
     <!-- Responsive CSS -->
-    <link href="../../static/base/vendor/responsive/responsive.css" rel="stylesheet">
+    <link href="../../static/base/css/responsive/responsive.css" rel="stylesheet">
 
 </head>
 
@@ -44,10 +44,10 @@
                                 <a href="register.html">校園版</a>
                             </div>
                             <div class="billboard">
-                                <a href="index.html">美食版</a>
+                                <a href="/">美食版</a>
                             </div>
                             <div class="groupbuy">
-                                <a href="groupbuy.html">團購版</a>
+                                <a href="/groupbuy/">團購版</a>
                             </div>
                             {% if request.user.is_authenticated %}
                             <div class="logout ">
@@ -116,25 +116,25 @@
         <div class="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
             <ul class="navbar-nav" id="yummy-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">附近店家</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">熱門店家排行</a>
+                    <a class="nav-link" href="/eat/top/">熱門店家排行</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">美食地圖</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="archive.html">美食文章</a>
+                    <a class="nav-link" href="/eat/article/">美食文章</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">今天吃什麼</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="forum.html">討論區</a>
+                    <a class="nav-link" href="/eat/forum/">討論區</a>
                 </li>
             </ul>
         </div>

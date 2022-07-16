@@ -16,11 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from eat import views as eat_views
+from groupbuy import views as groupbuy_views
 
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', eat_views.index),
+    #eat/home 要改上面 base.html也要改兩個地方 base1.html改一個
+    path('eat/article/', eat_views.article),
+    path('eat/forum/', eat_views.forum),
+    path('eat/top/', eat_views.top),
+    path('groupbuy/', groupbuy_views.groupbuy),
     path('accounts/', include('allauth.urls')),
+    #path('accounts/', include('myaccount.urls')),
 ]

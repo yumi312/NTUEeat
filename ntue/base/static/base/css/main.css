@@ -1,0 +1,316 @@
+/* --------------------
+:: 5.0 最新活動照片輪播 CSS 
+-------------------- */
+
+.new_activity_image{
+    height: 400px;
+    width: 100%;
+}
+
+
+/* --------------------
+:: 6.0 本週熱門店家 CSS 
+-------------------- */
+
+.welcome-single-slide {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    width: 250px;
+    
+}
+
+.welcome-single-slide img{
+    height: 200px;
+
+
+}
+
+.welcome-single-slide .project_title a > h5 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.welcome-single-slide .project_title {
+    position: absolute;
+    content: "";
+    bottom: -300px;
+    left: 0;
+    z-index: 3;
+    background: rgba(252, 108, 63, 0.7);
+    padding: 30px;
+    width: 100%;
+    height: auto;
+    -webkit-transition-duration: 750ms;
+    transition-duration: 750ms;
+}
+
+.welcome-single-slide:hover .project_title {
+    bottom: 0;
+}
+
+
+.welcome-post-sliders {
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-post-sliders .owl-prev {
+    position: absolute;
+    width: 10%;
+    background-color: transparent;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: url(./../img/core-img/back.png), auto !important;
+    z-index: 9;
+}
+
+.welcome-post-sliders .owl-next {
+    position: absolute;
+    width: 10%;
+    background-color: transparent;
+    height: 100%;
+    top: 0;
+    right: 0;
+    cursor: url(./../img/core-img/next.png), auto !important;
+}
+
+/* --------------------
+:: 7.0 精選文章 CSS 
+-------------------- */
+
+.post-thumb img {
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+
+.post-meta {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.post-author a,
+.post-date a,
+.post-favourite a,
+.post-comments a,
+.post-share a {
+    color: #b5aec4;
+    font-size: 14px;
+}
+
+.post-author a:hover,
+.post-date a:hover,
+.post-favourite a:hover,
+.post-comments a:hover,
+.post-share a:hover {
+    color: #000;
+}
+
+.post-favourite a,
+.post-comments a {
+    margin-right: 15px;
+}
+
+.post-author a {
+    margin-right: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.post-author a:after {
+    width: 2px;
+    height: 60%;
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -14px;
+    z-index: 2;
+    background-color: #b5aec4;
+}
+
+.single-post {
+    margin-bottom: 30px;
+}
+
+.single-post h2,
+.single-post h4 {
+    margin: 10px 0;
+    color: #232d37;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    text-transform: capitalize;
+}
+
+.single-post h2:hover,
+.single-post h4:hover {
+    color: #fc6c3f;
+}
+
+.single-post p {
+    color: #51545f;
+}
+
+.single-post .read-more {
+    font-size: 12px;
+    color: #b5aeba;
+    display: inline-block;
+    border: 1px solid #ebebeb;
+    border-radius: 30px;
+    height: 40px;
+    min-width: 170px;
+    line-height: 40px;
+    text-align: center;
+}
+
+
+.single-post .read-more:hover {
+    color: #000;
+    border: 1px solid #000;
+}
+
+
+
+
+
+/* --------------------
+:: 8.0 食記 CSS 
+-------------------- */
+
+.i-size{
+    width: 100%;
+    height: 250px;
+    border-radius: 5%;
+}
+
+.date_author{
+    bottom: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 20px;
+
+}
+
+.card{
+    margin: auto;
+    border:hidden;
+}
+
+.card .read-more {
+    font-size: 12px;
+    color: #b5aeba;
+    display: inline-block;
+    border: 1px solid #ebebeb;
+    border-radius: 30px;
+    height: 40px;
+    min-width: 170px;
+    line-height: 40px;
+    text-align: center;
+}
+
+
+.card .read-more:hover {
+    color: #000;
+    border: 1px solid #000;
+}
+/* --------------------
+:: 9.0 團購美食 CSS 
+-------------------- */
+
+.categories_area {
+    padding: 80px 0 50px 0;
+}
+
+.single_catagory {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+}
+
+.single_catagory img {
+    border-radius: 20px;
+}
+
+.groupbuy_i{
+    width: 100%;
+    height: 250px;
+}
+
+.btn-outline-dark{
+    border-radius: 30px;
+}
+
+/* --------------------
+:: 10.0 其他照片分享 CSS 
+-------------------- */
+
+.instagram_gallery_item {
+    position: relative;
+    z-index: 1;
+}
+
+.instagram_gallery_item img {
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    width: 100%;
+}
+
+.instagram_gallery_item .hover_overlay {
+    background: rgba(252, 108, 63, 0.7);
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    position: absolute;
+    top: 0;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    width: 100%;
+    z-index: 5;
+}
+
+.instagram_gallery_item:hover .hover_overlay {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+.instagram_gallery_item .follow-me a {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.instargram_area {
+    position: relative;
+    z-index: 1;
+}
+
+.instargram_area .owl-prev {
+    position: absolute;
+    width: 10%;
+    background-color: transparent;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: url(./../img/core-img/back.png), auto !important;
+    z-index: 9;
+}
+
+.instargram_area .owl-next {
+    position: absolute;
+    width: 10%;
+    background-color: transparent;
+    height: 100%;
+    top: 0;
+    right: 0;
+    cursor: url(./../img/core-img/next.png), auto !important;
+}
+

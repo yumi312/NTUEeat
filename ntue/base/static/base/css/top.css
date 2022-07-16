@@ -1,0 +1,59 @@
+.fa-thumbs-o-up{
+    padding-right: 10px;
+    font-size: 19px;
+    color: #396dbf;
+}
+
+.fa-thumbs-up{
+    padding-right: 10px;
+    font-size: 19px;
+    color: #396dbf;
+}
+
+.fa-thumbs-down{
+   font-size: 19px;
+    color: #bf4739;
+
+}
+
+
+.fa-thumbs-o-down{
+    font-size: 19px;
+    color: #bf4739;
+}
+
+.fa-star{
+    color: #fcc019;
+}
+
+.top-1{
+    font-size: 20px;
+    color: #bf4739;
+}
+.top-2{
+    font-size: 19px;
+    color: #bf4739;
+}
+.top-3{
+    font-size: 18px;
+    color: #bf4739;
+}
+.color-top{
+    color: #49484a;
+}
+
+
+
+.changegreen{
+    color: green;
+}
+
+.changeblue{
+    color: blue;
+}
+
+.gb_class{
+    font-weight: bold;
+    color: #cc4027;
+    font-size: 17px;
+}
