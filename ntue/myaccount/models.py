@@ -5,11 +5,10 @@ from django.contrib.auth.models import User
 class UserProfile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-
-    gender_choice = [('boy','boy'),('girl','girl'),]
-
-    org = models.CharField(
-        'Organization', max_length=128, blank=True)
+    #gender_choice = (('boy','boy'),('girl','girl'),)
+    #gender = models.CharField(max_length=9,
+    #              choices=gender_choice,
+    #              default="gender")
 
     phone = models.CharField(
         'phone', max_length=50, blank=True)

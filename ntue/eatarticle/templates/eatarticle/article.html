@@ -33,7 +33,7 @@
                                         <div class="post-author-date-area d-flex">
                                             <!-- Post Author -->
                                             <div class="post-author">
-                                                <a href="#">By Marian</a>
+                                                <a href="#">By Emily</a>
                                             </div>
                                             <!-- Post Date -->
                                             <div class="post-date">
@@ -248,11 +248,12 @@
                         <!-- ******* List Blog Area Start ******* -->
 
                         <!-- Single Post -->
+                        {% for eatarticle in eatarticles %}
                         <div class="col-12">
                             <div class="list-blog single-post d-sm-flex wow fadeInUpBig" data-wow-delay=".2s">
                                 <!-- Post Thumb -->
                                 <div class="post-thumb">
-                                    <img src="{% static 'base/img/blog-img/6.jpg' %}" alt="">
+                                    <img src="{{eatarticle.list_image.url}}" alt="">
                                 </div>
                                 <!-- Post Content -->
                                 <div class="post-content">
@@ -260,11 +261,11 @@
                                         <div class="post-author-date-area d-flex">
                                             <!-- Post Author -->
                                             <div class="post-author">
-                                                <a href="#">By Marian</a>
+                                                <a href="#">By {{eatarticle.author_name}}</a>
                                             </div>
                                             <!-- Post Date -->
                                             <div class="post-date">
-                                                <a href="#">May 19, 2017</a>
+                                                <a href="#">{{eatarticle.create_time}}</a>
                                             </div>
                                         </div>
                                         <!-- Post Comment & Share Area -->
@@ -283,15 +284,25 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#">
-                                        <h4 class="post-headline">The 10 Best Bars By The Seaside In Blackpool, UK</h4>
+                                    <a href="/eat/article/detail/{{eatarticle.slug}}">
+                                        <h4 class="post-headline">{{eatarticle.title}}</h4>
                                     </a>
-                                    <p>Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                                    <a href="#" class="read-more">Continue Reading..</a>
+                                    <p>{{eatarticle.contents | truncatechars:150}}...</p>
+                                    <p><a href="/eat/article/hashtags/{{hashtag.slug}}">#{{eatarticle.hashtag}}</a></p>
+                                    <a href="/eat/article/detail/{{eatarticle.slug}}" class="read-more">Continue Reading..</a>
+                                    <div class="btn-group">
+                                        {% if perms.article.change_article %}
+                                        <a href="{% url 'edit' pk=eatarticle.pk %}" class="card-link">Edit</a>
+                                        {% endif %}
+                                        {% if perms.article.delete_article %}
+                                        <a href="{% url 'delete' pk=eatarticle.pk %}" class="card-link">Delete</a>
+                                        {% endif %}
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
+                        {% endfor %}
                         <!-- Single Post -->
                         <div class="col-12">
                             <div class="list-blog single-post d-sm-flex wow fadeInUpBig" data-wow-delay=".4s">
@@ -435,18 +446,18 @@
                     <div class="blog-sidebar mt-5 mt-lg-0">
                         <!-- Single Widget Area -->
                         <div class="single-widget-area about-me-widget text-center">
+                            {% if request.user.is_authenticated %}
+                            <h6 class="wt text-white">我要發文</h6>
+                            {% else %}
+                            {% endif %}
                             <div class="widget-title">
                                 <h6>#Hashtag</h6>
                             </div>
-                            <p>#科技大樓美食 (8)</p>
-                            <p>#早餐店 (11)</p>
-                            <p>#飲料店 (3)</p>
-                            <p>#學生最愛 (2)</p>
-                            <p>#便宜大碗 (2)</p>
-                            <p>#月底救星 (2)</p>
-                            <p>#不限時咖啡廳 (10)</p>
+                            {% for hashtag in hashtags %}
+                            <p><a href="/eat/article/hashtags/{{hashtag.slug}}">#{{hashtag}}</a></p>
+                            {% endfor %}
                         </div>
-
+                
                         <!-- Single Widget Area -->
                         <div class="single-widget-area subscribe_widget text-center">
                             <div class="widget-title">
@@ -461,7 +472,7 @@
                                 <a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
                             </div>
                         </div>
-
+                
                         <!-- Single Widget Area -->
                         <div class="single-widget-area popular-post-widget">
                             <div class="widget-title text-center">
@@ -518,9 +529,9 @@
                                 </div>
                             </div>
                         </div>
-
+                
                        
-
+                
                         <!-- Single Widget Area -->
                         <div class="single-widget-area newsletter-widget">
                             <div class="widget-title text-center">
@@ -534,8 +545,10 @@
                                 </form>
                             </div>
                         </div>
+                
                     </div>
                 </div>
+
             </div>
         </div>
     </section>

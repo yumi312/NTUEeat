@@ -320,7 +320,10 @@
     color: #b5aec4;
     font-size: 14px;
 }
-
+.post-big{
+    color: #b5aec4;
+    font-size: 50px;
+}
 .post-author a:hover,
 .post-date a:hover,
 .post-favourite a:hover,
@@ -440,7 +443,20 @@
     border-radius: 2px;
     margin-bottom: 30px;
 }
-
+.wt{
+    background: #fc6c3f;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    border-radius: 30px;
+}
+.wt:hover{
+    background: #c84a23;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    border-radius: 30px;
+}
 .single-widget-area {
     margin-bottom: 50px;
 }

@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from eat import views as eat_views
+from eatarticle import views as eatarticle_views
 from groupbuy import views as groupbuy_views
 
 from django.conf import settings
@@ -24,10 +25,17 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', eat_views.index),
     #eat/home 要改上面 base.html也要改兩個地方 base1.html改一個
-    path('eat/article/', eat_views.article),
+    path('eat/article/', eatarticle_views.article),
+    path('eat/article/create/', eatarticle_views.create),
+    path('eat/article/edit/<int:pk>/', eatarticle_views.edit, name="edit"),
+    path('eat/article/delete/<int:pk>/', eatarticle_views.delete, name="delete"),
+    path('eat/article/detail/<slug:slug>/', eatarticle_views.detail),
+    path('eat/article/hashtags/<slug:slug>/', eatarticle_views.hashtag),
+
     path('eat/forum/', eat_views.forum),
     path('eat/top/', eat_views.top),
     path('groupbuy/', groupbuy_views.groupbuy),
+
     path('accounts/', include('allauth.urls')),
-    #path('accounts/', include('myaccount.urls')),
-]
+    path('accounts/', include('myaccount.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

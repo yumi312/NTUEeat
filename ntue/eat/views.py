@@ -6,8 +6,7 @@ from . import models
 def index(request):
     return render(request, 'eat/index.html',)
 
-def article(request):
-    return render(request, 'eat/article.html',)
+
 
 def forum(request):
     return render(request, 'eat/forum.html',)

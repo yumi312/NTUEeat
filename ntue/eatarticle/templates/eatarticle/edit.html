@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<section class="">
+    <form class="mb-3" action="" enctype="multipart/form-data" method="POST">
+        <h1 class="mt-3 pt-3 display-2 text-100 text-center" style="color: #37517e;">加入文章</h1>
+        {% csrf_token %}
+        <div class="row justify-content-center ">
+            <div class="col-6">
+                {{ form }}
+                <hr class="mb-3">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+            </div>
+        </div>
+</section>
+{% endblock %}

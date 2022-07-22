@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'imagekit',
 
     # allauth
     'allauth',
@@ -48,13 +49,14 @@ INSTALLED_APPS = [
 
     # Bootstrap 4
     'widget_tweaks',
-
+    #'imagekit',
 
     #apps
     'eat',
+    'eatarticle',
     'groupbuy',
     'base',
-    #'myaccount',
+    'myaccount',
 ]
 
 SITE_ID = 2
@@ -67,8 +69,9 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'tizhuan94@gmail.com'
 # Application Key
 EMAIL_HOST_PASSWORD = 'fdrxyvbrfvstcjcq'
-LOGIN_REDIRECT_URL = '/'
-#LOGIN_REDIRECT_URL = '/accounts/profile/'
+#LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/accounts/profile/'
+ACCOUNT_SIGNUP_FORM_CLASS = 'myaccount.forms.SignupForm'
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
@@ -145,14 +148,15 @@ TIME_ZONE = 'Asia/Taipei'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+MEDIA_URL='/media/'
+MEDIA_ROOT='media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
