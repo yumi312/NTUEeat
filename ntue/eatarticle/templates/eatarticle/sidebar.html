@@ -1,0 +1,109 @@
+{% load static %}
+<!-- ****** Blog Sidebar ****** -->
+<div class="col-12 col-sm-8 col-md-6 col-lg-4">
+    <div class="blog-sidebar mt-5 mt-lg-0">
+        <!-- Single Widget Area -->
+        <div class="single-widget-area about-me-widget text-center">
+            {% if request.user.is_authenticated %}
+            <h6 class="wt text-white">我要發文</h6>
+            {% else %}
+            {% endif %}
+            <div class="widget-title">
+                <h6>#Hashtag</h6>
+            </div>
+            {% for hashtag in hashtags %}
+            <p><a href="/eat/article/hashtags/{{hashtag.slug}}">#{{hashtag}}</a></p>
+            {% endfor %}
+        </div>
+
+        <!-- Single Widget Area -->
+        <div class="single-widget-area subscribe_widget text-center">
+            <div class="widget-title">
+                <h6>Subscribe &amp; Follow</h6>
+            </div>
+            <div class="subscribe-link">
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+        <!-- Single Widget Area -->
+        <div class="single-widget-area popular-post-widget">
+            <div class="widget-title text-center">
+                <h6>熱門貼文</h6>
+            </div>
+            <!-- Single Popular Post -->
+            <div class="single-populer-post d-flex">
+                <img src="{% static 'base/img/sidebar-img/1.jpg' %}" alt="">
+                <div class="post-content">
+                    <a href="#">
+                        <h6>Top Wineries To Visit In England</h6>
+                    </a>
+                    <p>Tuesday, October 3, 2017</p>
+                </div>
+            </div>
+            <!-- Single Popular Post -->
+            <div class="single-populer-post d-flex">
+                <img src="{% static 'base/img/sidebar-img/2.jpg' %}" alt="">
+                <div class="post-content">
+                    <a href="#">
+                        <h6>The 8 Best Gastro Pubs In Bath</h6>
+                    </a>
+                    <p>Tuesday, October 3, 2017</p>
+                </div>
+            </div>
+            <!-- Single Popular Post -->
+            <div class="single-populer-post d-flex">
+                <img src="{% static 'base/img/sidebar-img/3.jpg' %}" alt="">
+                <div class="post-content">
+                    <a href="#">
+                        <h6>Zermatt Unplugged the best festival</h6>
+                    </a>
+                    <p>Tuesday, October 3, 2017</p>
+                </div>
+            </div>
+            <!-- Single Popular Post -->
+            <div class="single-populer-post d-flex">
+                <img src="{% static 'base/img/sidebar-img/4.jpg' %}" alt="">
+                <div class="post-content">
+                    <a href="#">
+                        <h6>Harrogate's Top 10 Independent Eats</h6>
+                    </a>
+                    <p>Tuesday, October 3, 2017</p>
+                </div>
+            </div>
+            <!-- Single Popular Post -->
+            <div class="single-populer-post d-flex">
+                <img src="{% static 'base/img/sidebar-img/5.jpg' %}" alt="">
+                <div class="post-content">
+                    <a href="#">
+                        <h6>Eating Out On A Budget In Oxford</h6>
+                    </a>
+                    <p>Tuesday, October 3, 2017</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Single Widget Area -->
+        <div class="single-widget-area newsletter-widget">
+            <div class="widget-title text-center">
+                <h6>Newsletter</h6>
+            </div>
+            <p>Subscribe our newsletter gor get notification about new updates, information discount, etc.
+            </p>
+            <div class="newsletter-form">
+                <form action="#" method="post">
+                    <input type="email" name="newsletter-email" id="email" placeholder="Your email">
+                    <button type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
