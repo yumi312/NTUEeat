@@ -6,6 +6,8 @@ from .models import Hashtag, Eatarticle
 
 from django.contrib.auth.decorators import permission_required
 # Create your views here.
+
+
 def article(request):
     q = request.GET.get('q', None)
     items = ""
@@ -15,21 +17,25 @@ def article(request):
     elif q is not None:
         eatarticles = Eatarticle.objects.filter(title__contains=q)
         hashtags = Hashtag.objects.filter(title__contains=q)
-    return render(request, 'eatarticle/article.html',{'eatarticles':eatarticles, 'hashtags':hashtags})
+    return render(request, 'eatarticle/article.html', {'eatarticles': eatarticles, 'hashtags': hashtags})
 
 
 def detail(request, slug=None):  # < here
     eatarticle = get_object_or_404(Eatarticle, slug=slug)
     hashtag = Hashtag.objects.all()
     print(eatarticle.slug)
-    return render(request, 'eatarticle/detail.html', {'eatarticle':eatarticle, 'hashtag':hashtag})
+    return render(request, 'eatarticle/detail.html', {'eatarticle': eatarticle, 'hashtag': hashtag})
 
-#放在eat/article.html頁面的
+# 放在eat/article.html頁面的
+
+
 def hashtag(request, slug=None):
     eatarticle = Eatarticle.objects.filter(hashtag__slug=slug)
     hashtag = Hashtag.objects.all()
-    return render(request, 'eatarticle/article.html', {'eatarticle':eatarticle, 'hashtag':hashtag}) 
-#發文
+    return render(request, 'eatarticle/article.html', {'eatarticle': eatarticle, 'hashtag': hashtag})
+# 發文
+
+
 @permission_required('article.add_article')
 def create(request):
     if request.method == "POST":
@@ -41,20 +47,25 @@ def create(request):
     else:
         form = ArticleForm
     return render(request, "eatarticle/edit.html", {'form': form})
-#修改
+# 修改
+
+
 @permission_required('article.change_article')
 def edit(request, pk=None):
     # 判斷物件存不存在，存在就傳回，不存在就404
     a = get_object_or_404(Eatarticle, pk=pk)
     if request.method == "POST":
-        form = ArticleForm(request.POST, instance=a)
+        form = ArticleForm(request.POST or None,
+                           request.FILES, instance=a)   # 修了這行
         if form.is_valid():
             form.save()
             return HttpResponseRedirect("/eat/article")
     else:
         form = ArticleForm(instance=a)
     return render(request, "eatarticle/edit.html", {'form': form})
-#刪除
+# 刪除
+
+
 @permission_required('article.delete_article')
 def delete(request, pk=None):
     a = get_object_or_404(Eatarticle, pk=pk)
