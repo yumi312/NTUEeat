@@ -5,7 +5,7 @@
         <!-- Single Widget Area -->
         <div class="single-widget-area about-me-widget text-center">
             {% if request.user.is_authenticated %}
-            <h6 class="wt text-white">我要發文</h6>
+            <h6 class="wt text-white"><a href="/eat/article/create/">我要發文</a></h6>
             {% else %}
             {% endif %}
             <div class="widget-title">

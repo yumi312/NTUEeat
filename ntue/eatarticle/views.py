@@ -1,12 +1,24 @@
+from xml.etree.ElementTree import Comment
+from django.urls import reverse
 from django.shortcuts import redirect, render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-
+from django.views.generic import DetailView,CreateView
 from .form import ArticleForm
 from .models import Hashtag, Eatarticle
 
 from django.contrib.auth.decorators import permission_required
 # Create your views here.
 
+def like(request, pk):
+    eatarticle = get_object_or_404(Eatarticle, id=request.POST.get('post_id'))
+    print('555')
+    if eatarticle.likes.filter(id=request.user.id).exists():
+        eatarticle.likes.remove(request.user)
+    else:
+        eatarticle.likes.add(request.user)
+        print('123')
+
+    return HttpResponseRedirect(reverse('detail', args=[str(pk)]))
 
 def article(request):
     q = request.GET.get('q', None)
@@ -20,21 +32,40 @@ def article(request):
     return render(request, 'eatarticle/article.html', {'eatarticles': eatarticles, 'hashtags': hashtags})
 
 
+
+# 放在eat/article.html頁面的
+""" class BlogPostDetailView(DetailView):
+    model = Eatarticle
+    template_name: 'eatarticle/detail.html'
+    context_object_name = 'object'
+    print("1") """
 def detail(request, slug=None):  # < here
     eatarticle = get_object_or_404(Eatarticle, slug=slug)
     hashtag = Hashtag.objects.all()
     print(eatarticle.slug)
     return render(request, 'eatarticle/detail.html', {'eatarticle': eatarticle, 'hashtag': hashtag})
-
-# 放在eat/article.html頁面的
-
+    """ def get_context_data(self,*args,**kwargs):
+        context = super(BlogPostDetailView,self).get_context_data(*args,**kwargs)
+        likes_connected = get_object_or_404(Eatarticle, id=self.kwargs['pk'])
+        liked = False
+        if likes_connected.likes.filter(id=self.request.user.id).exists():
+            liked = True
+        context['number_of_likes'] = likes_connected.number_of_likes()
+        context['post_is_liked'] = liked
+        print("2")
+        return context """
+    
 
 def hashtag(request, slug=None):
     eatarticle = Eatarticle.objects.filter(hashtag__slug=slug)
     hashtag = Hashtag.objects.all()
-    return render(request, 'eatarticle/article.html', {'eatarticle': eatarticle, 'hashtag': hashtag})
+    return render(request, 'eatarticle/article.html', {'eatarticles': eatarticle, 'hashtags': hashtag})
 # 發文
 
+""" class AddCommentView(CreateView):
+    model = Comment
+    template_name: 'eatarticle/detail.html'
+    fields: '__all__' """
 
 @permission_required('article.add_article')
 def create(request):

@@ -1,0 +1,16 @@
+{% load static %}
+
+<h2>留言區(雖然我覺得這裡可以不用做留言區)</h2>
+{% if not eatarticle.comments.all %}
+    <p>還沒有評論...<a href="#">我要評論</a></p>
+{% else %}
+    {% for comment in eatarticle.comments.all %}   
+    <strong>{{comment.author_name}} - {{comment.time}}</strong>
+    <br/>
+    <p>{{comment.body}}</p>
+    <br/>
+    <a href="">我要留言</a>
+    <button type="button" Value="重新整理" onClick="history.go(0);" class="btn btn-primary">送出</button>
+    <br/>
+    {% endfor %}
+{% endif %}

@@ -29,8 +29,10 @@ urlpatterns = [
     path('eat/article/create/', eatarticle_views.create),
     path('eat/article/edit/<int:pk>/', eatarticle_views.edit, name="edit"),
     path('eat/article/delete/<int:pk>/', eatarticle_views.delete, name="delete"),
-    path('eat/article/detail/<slug:slug>/', eatarticle_views.detail),
+    path('eat/article/detail/<slug:slug>/', eatarticle_views.detail,name="detail"),
     path('eat/article/hashtags/<slug:slug>/', eatarticle_views.hashtag),
+    #path('like/<int:pk>/',eatarticle_views.like ,name='blog_posts'),
+    
 
     path('eat/forum/', eat_views.forum),
     path('eat/top/', eat_views.top),

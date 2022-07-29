@@ -12,16 +12,20 @@ class ArticleForm(ModelForm):
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control mb-2 input-group'}),
-            'author_name': forms.Select(attrs={'class': 'form-control  mb-2 input-group'}),
+            #'author_name': forms.Select(attrs={'class': 'form-control  mb-2 input-group'}),
             'contents': forms.Textarea(attrs={'class': 'form-control mb-2 input-group'}),
+            'snippet': forms.Textarea(attrs={'class': 'form-control mb-2 input-group'}),
             'slug': forms.TextInput(attrs={'class': 'form-control mb-2 input-group'}),
             # dropdowm list
             'hashtag': forms.Select(attrs={'class': 'form-control mb-2 input-group'}),
         }
         labels = {
             'title': '名稱',
-            'author_name': '作者',      # labels['title']
+            'image':'封面圖片',
+            #'author_name': '作者',      # labels['title']
             'contents': '內容',
             'slug': '代號',
             'hashtag':'Hashtag',
+            'snippet':'預覽文字',
+            
         }

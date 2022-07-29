@@ -45,7 +45,8 @@
                                     </div>
                                 </div>
 
-                                <p>{{eatarticle.contents}}</p>
+                                <p>{{eatarticle.contents | safe}}</p>
+                                <p><a href="/eat/article/hashtags/{{eatarticle.hashtag.slug}}">#{{eatarticle.hashtag}}</a></p>
                                 <div class="btn-group">
                                     {% if perms.article.change_article %}
                                     <a href="{% url 'edit' pk=eatarticle.pk %}" class="card-link">Edit</a>
@@ -55,12 +56,19 @@
                                     {% endif %}
 
                                 </div>
-                                <div>我喜歡這則貼文</div>
+                                
+                               
+
+                                <!--案讚的部分在messenger-->
+
                                 <div class="post-big">
                                     <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
                                 </div>
+
                                 <div>我要分享(放很多app圖標)</div>
-                                <div>我要留言</div>
+                            
+                                {% include 'eatarticle/comment.html' %}
+
                             </div>
                         </div>
                     </div>

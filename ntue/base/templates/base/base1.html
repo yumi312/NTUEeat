@@ -51,11 +51,11 @@
                                 <a href="/groupbuy/">團購版</a>
                             </div>
                             {% if request.user.is_authenticated %}
-                            <div class="logout ">
-                                <a href="/accounts/logout">Logout</a>
+                            <div class="logout">
+                                <a href="/accounts/logout">Logout{{user.username}}</a>
                             </div>
                             {% else %}
-                            <div class="login ">
+                            <div class="login">
                                 <a href="/accounts/login">Login</a>
                             </div>
                             {% endif %}
@@ -107,9 +107,15 @@
                
     </header>
     <!-- ****** 封面大圖大字 end ****** -->
+
+
+    
+    
+    
     <div class="main">
         {% block content %}{% endblock %}
     </div>
+
     <!-- ****** Footer Area Start ****** -->
     <footer class="footer_area">
         <div class="container">

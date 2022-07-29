@@ -51,8 +51,8 @@
                                 <a href="/groupbuy/">團購版</a>
                             </div>
                             {% if request.user.is_authenticated %}
-                            <div class="logout ">
-                                <a href="/accounts/logout">Logout</a>
+                            <div class="logout">
+                                <a href="/accounts/logout">Logout{{user.username}}</a>
                             </div>
                             {% else %}
                             <div class="login">
@@ -108,8 +108,6 @@
     </header>
     <!-- ****** 封面大圖大字 end ****** -->
 
-
-
     <!-- ****** 選單頁面nav start****** -->
     <nav class="navbar navbar-expand-lg mt-5 mb-1 navbar_mid">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yummyfood-nav" aria-controls="yummyfood-nav" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
@@ -141,6 +139,7 @@
         </div>
     </nav>
     <!-- ****** 選單頁面nav end****** -->
+    
     
     <div class="main">
         {% block content %}{% endblock %}

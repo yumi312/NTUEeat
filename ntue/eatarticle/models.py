@@ -1,21 +1,17 @@
+import re
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 import datetime
+from django.contrib.auth.models import User
 from django.utils.text import slugify as django_slugify
 from uuslug import slugify as uuslug_slugify
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
+from ckeditor.fields import RichTextField
 
 import time
 # Create your models here.
-
-
-class Author(models.Model):
-    name = models.CharField(max_length=255, default="")
-
-    def __str__(self):
-        return self.name
 
 class Hashtag(models.Model):
     title = models.CharField(max_length=255, default="")
@@ -30,8 +26,9 @@ class Hashtag(models.Model):
 
 class Eatarticle(models.Model):
     title = models.CharField(max_length=255, default="")
-    author_name = models.ForeignKey(Author, null=True, on_delete=models.PROTECT)
-    contents = models.TextField(default="")
+    author_name = models.ForeignKey(User, on_delete=models.CASCADE)
+    snippet = models.CharField(max_length=100, default="Click Link Above To Read Blog Post...")
+    contents = RichTextField(blank=True,null=True)
     slug = models.SlugField(editable=False,blank=True, default="")
     hashtag = models.ForeignKey(Hashtag, null=True, on_delete=models.PROTECT)  # 分成 程式、美術等等的分類
     image = models.ImageField(default="", blank=True, upload_to="images")
@@ -39,9 +36,13 @@ class Eatarticle(models.Model):
     detail_image = ImageSpecField(source='image',processors=[ResizeToFill(700, 400)], format='JPEG', options={'quality': 60})
     edit_time = models.DateTimeField(auto_now_add=True)
     create_time = models.DateTimeField(auto_now=True)
-    #上面兩個不知道有甚麼區別
+    """ likes = models.ManyToManyField(User, related_name='blog_posts')
+
+    def number_of_likes(self):
+        return self.likes.count() """
+    
     def __str__(self):
-        return self.title
+        return '%s - %s' % (self.title, self.author_name)
 
     class Meta:
         ordering = ['id']
@@ -53,3 +54,11 @@ class Eatarticle(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', args=[str(self.slug)])
+
+class Comment(models.Model):
+    eatarticle = models.ForeignKey(Eatarticle,editable=False,related_name="comments", on_delete=models.CASCADE)
+    author_name = models.ForeignKey(User, editable=False,null=True, on_delete=models.PROTECT)
+    body = models.TextField()
+    time = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return '%s - %s' % (self.eatarticle.title, self.author_name)

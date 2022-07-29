@@ -51,6 +51,9 @@ INSTALLED_APPS = [
     'widget_tweaks',
     #'imagekit',
 
+    #others
+    'ckeditor',
+
     #apps
     'eat',
     'eatarticle',
