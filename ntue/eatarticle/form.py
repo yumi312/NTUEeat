@@ -20,7 +20,7 @@ class ArticleForm(ModelForm):
             'hashtag': forms.Select(attrs={'class': 'form-control mb-2 input-group'}),
         }
         labels = {
-            'title': '名稱',
+            'title': '標題',
             'image':'封面圖片',
             #'author_name': '作者',      # labels['title']
             'contents': '內容',

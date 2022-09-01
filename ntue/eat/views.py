@@ -6,10 +6,8 @@ from . import models
 def index(request):
     return render(request, 'eat/index.html',)
 
-
-
-def forum(request):
-    return render(request, 'eat/forum.html',)
+def map(request):
+    return render(request, 'eat/map.html',)
 
 def top(request):
     return render(request, 'eat/top.html',)

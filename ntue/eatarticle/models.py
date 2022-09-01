@@ -26,11 +26,11 @@ class Hashtag(models.Model):
 
 class Eatarticle(models.Model):
     title = models.CharField(max_length=255, default="")
-    author_name = models.ForeignKey(User, on_delete=models.CASCADE)
+    author_name = models.ForeignKey(User,  on_delete=models.CASCADE)
     snippet = models.CharField(max_length=100, default="Click Link Above To Read Blog Post...")
     contents = RichTextField(blank=True,null=True)
     slug = models.SlugField(editable=False,blank=True, default="")
-    hashtag = models.ForeignKey(Hashtag, null=True, on_delete=models.PROTECT)  # 分成 程式、美術等等的分類
+    hashtag = models.ForeignKey(Hashtag, null=True, on_delete=models.PROTECT)  # 分哪裡美食等等的分類
     image = models.ImageField(default="", blank=True, upload_to="images")
     list_image = ImageSpecField(source='image',processors=[ResizeToFill(350, 200)], format='JPEG', options={'quality': 60})
     detail_image = ImageSpecField(source='image',processors=[ResizeToFill(700, 400)], format='JPEG', options={'quality': 60})

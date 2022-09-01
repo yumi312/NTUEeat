@@ -7,51 +7,39 @@
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
-{% block content %}
-
-    <h1 class="text-100 text-center ">{% trans "Sign In" %}</h1>
-
-    {% get_providers as socialaccount_providers %}
-
-    <!--{% if socialaccount_providers %}
-    <p>{% blocktrans with site.name as site_name %}Please sign in with one
-    of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-    for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
-
-    <div class="socialaccount_ballot">
-
-      <a class="btn btn-danger">
-        {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-      </a>
-
-      <div class="login-or">{% trans 'or' %}</div>
-
+{% block content %}    
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mb-5">
+        <h1 class="heading-section">Sign In</h1>
+      </div>
     </div>
 
-    {% include "socialaccount/snippets/login_extra.html" %}
-
-    {% else %}-->
-    <p>{% blocktrans %}If you have not created an account yet, then please
-    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-    <!--{% endif %}-->
-    
-    <form class="form-account login" method="POST" action="{% url 'account_login' %}">
-      <div>還沒有帳號?按此<a class="btn ms-1 mb-1 text-white rounded-pill text-white" style="background-color: #37517e;" href="{{ signup_url }}">sign up</a></div>
-      {% csrf_token %}
-      {% include 'form_snippet.html' %}
-      {% if redirect_field_value %}
-        
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-      {% endif %}
-      <p >
-        <a class="button secondaryAction " href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-      </p>
-      <p>
-        
-        <a class="btn btn-danger text-white rounded-pill mb-2 " href="{% provider_login_url 'google' method='oauth2' %}">Google登入</a>
-        <button class="btn btn-block text-white rounded-pill mb-2 justify-content-md-end" style="background-color: #37517e;" type="submit" href="{% url 'account_reset_password' %}">{% trans "Sign In" %}</button>
-        
-      </p>
-    </form>
-  
+    {% get_providers as socialaccount_providers %}
+    <div class="row justify-content-center" >
+      <div class="col-md-6 col-lg-4">
+        <div class="login-wrap p-0">
+          <h3 class="mb-4 text-center text-white">Have an<a href="{{ signup_url }}" style="color:#fbceb5;"> account </a>?</h3>
+          <form class="form-account login" method="POST" action="{% url 'account_login' %}">
+            
+            {% csrf_token %}
+            {% include 'form_snippet.html' %}
+            {% if redirect_field_value %}
+              
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            
+              <button class="form-control btn btn-primary submit px-3" type="submit" href="{% url 'account_reset_password' %}">{% trans "Sign In" %}</button>
+            
+            <p >
+              <a class="button secondaryAction " href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+            </p>
+            <div class="social d-flex text-center">
+              <a class="px-2 py-2 mr-md-1 rounded " >Facebook</a>
+              <a class="px-2 py-2 mr-md-1 rounded " href="{% provider_login_url 'google' method='oauth2' %}">Google</a>
+              
+            </div>
+          </form>
+        </div>
+			</div>
+		</div>
 {% endblock %}

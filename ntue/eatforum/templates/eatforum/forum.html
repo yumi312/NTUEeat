@@ -1,4 +1,4 @@
-{% extends 'base/base1.html' %}
+{% extends 'base/base.html' %}
 {% load static %}
 {% block content %}
     
@@ -156,62 +156,106 @@
 
 
                     <!---------單則post start--------->
+                    {% for eatforum in object_list %}
                     <div class="row post_row">
-                        <div class="col-8">
-                            <div class="d-flex">
-                                <img class="author-image mb-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-JDYllMOzDFu9efWWemyp5UABjsodiP52ZrNR4OdCFLdiCZNmAKkPb0SmYrmAIaMLk1o&usqp=CAU" alt="">
-                                <div class="pt-2 ps-2"> Ryan · 美食 · 2022/7/2 13:56</div>
+                        <a href="{% url 'detailforum' eatforum.pk %}">
+                            <div class="col-8">
+                                <div class="d-flex">
+                                    <img class="author-image mb-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-JDYllMOzDFu9efWWemyp5UABjsodiP52ZrNR4OdCFLdiCZNmAKkPb0SmYrmAIaMLk1o&usqp=CAU" alt="">
+                                    <div class="pt-2 ps-2 text-dark"> {{eatforum.author_name}} · {{eatforum.category}} · {{eatforum.create_time}}</div>
 
+                                </div>
+                                
+                                <h5 class="pt-2">{{eatforum.title}}</h5>
+                                <div>{{eatforum.contents | slice:"20" | safe}}...</div>
+                                <div class="d-flex mt-4">
+                                    <i class="fa fa-heart pe-2 " aria-hidden="true"> 10</i>
+                                    <i class="fa fa-comment pe-2" aria-hidden="true"> 0</i>
+                                    <i class="fa fa-eye pe-2" aria-hidden="true"> 30</i>
+                                    <div class="btn-group">
+                                        {% if perms.forum.change_forum %}
+                                            {% if user.id == eatforum.author_name.id %}
+                                                <a href="{% url 'edit' pk=eatforum.pk %}" class="card-link ps-2">Edit</a>
+                                            {% endif %}
+                                        {% endif %}
+                                        {% if perms.forum.delete_forum %}
+                                            {% if user.id == eatforum.author_name.id %}
+                                                <a href="{% url 'delete' pk=eatforum.pk %}" class="card-link">Delete</a>
+                                            {% endif %}
+                                        {% endif %}
+    
+                                    </div>
+                                </div>
                             </div>
-                            
-                            <h5 class="pt-2">最近新發現一家好吃的餐廳！！</h5>
-                            <div>超級好吃不是我在說，大家都給我快去吃！</div>
-                            <div class="d-flex mt-4">
-                                <i class="fa fa-heart pe-2 " aria-hidden="true"> 10</i>
-                                <i class="fa fa-comment pe-2" aria-hidden="true"> 0</i>
-                                <i class="fa fa-eye pe-2" aria-hidden="true"> 30</i>
-                            </div>
-                        </div>
 
-                        <div class="col-4 align-self-center ">
-                            <i class="fa fa-bookmark-o justify-content-end d-flex fz-18 mt-1" aria-hidden="true"></i>
+                            <div class="col-4 align-self-center ">
+                                <i class="fa fa-bookmark-o justify-content-end d-flex fz-18 mt-1" aria-hidden="true"></i>
 
-                            <div class="div post_Image d-flex justify-content-end mt-3">
-                                <img class="post_image " src="https://api.elle.com.hk/var/ellehk/storage/images/beauty_and_health/top-10-protein-foods/35540268-6-chi-HK/_1_img_1040_780.jpg" alt="">
+                                {% if eatforum.image %}
+                                <div class="div post_Image d-flex justify-content-end mt-3">
+                                    <img class="post_image " src="{{eatforum.list_image.url}}" alt="">
+                                </div>
+                                {% else %}
+                                <div class="post-thumb" style="width: 350px; height: 350px; background: #FFF">
+                                </div>
+                                {% endif %}
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <hr class="mt-4 mb-4">   
+                    {% endfor %}
                     <!---------單則post end--------->
 
 
                     <!---------單則post start--------->
+                    {% for eatforum in eatforums %}
                     <div class="row post_row">
-                        <div class="col-8">
-                            <div class="d-flex">
-                                <img class="author-image mb-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-JDYllMOzDFu9efWWemyp5UABjsodiP52ZrNR4OdCFLdiCZNmAKkPb0SmYrmAIaMLk1o&usqp=CAU" alt="">
-                                <div class="pt-2 ps-2"> Ryan · 美食 · 2022/7/2 13:56</div>
+                        <a href="eat/forum/detail/{{eatforum.slug}}">
+                            <div class="col-8">
+                                <div class="d-flex">
+                                    <img class="author-image mb-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-JDYllMOzDFu9efWWemyp5UABjsodiP52ZrNR4OdCFLdiCZNmAKkPb0SmYrmAIaMLk1o&usqp=CAU" alt="">
+                                    <div class="pt-2 ps-2 text-dark"> {{eatforum.author_name}} · {{eatforum.category}} · {{eatforum.create_time}}</div>
 
+                                </div>
+                                
+                                <h5 class="pt-2">{{eatforum.title}}</h5>
+                                <div>{{eatforum.contents | slice:"20" | safe}}...</div>
+                                <div class="d-flex mt-4">
+                                    <i class="fa fa-heart pe-2 " aria-hidden="true"> 10</i>
+                                    <i class="fa fa-comment pe-2" aria-hidden="true"> 0</i>
+                                    <i class="fa fa-eye pe-2" aria-hidden="true"> 30</i>
+                                    <div class="btn-group">
+                                        {% if perms.forum.change_forum %}
+                                            {% if user.id == eatforum.author_name.id %}
+                                                <a href="{% url 'edit' pk=eatforum.pk %}" class="card-link ps-2">Edit</a>
+                                            {% endif %}
+                                        {% endif %}
+                                        {% if perms.forum.delete_forum %}
+                                            {% if user.id == eatforum.author_name.id %}
+                                                <a href="{% url 'delete' pk=eatforum.pk %}" class="card-link">Delete</a>
+                                            {% endif %}
+                                        {% endif %}
+    
+                                    </div>
+                                </div>
                             </div>
-                            
-                            <h5 class="pt-2">最近新發現一家好吃的餐廳！！</h5>
-                            <div>超級好吃不是我在說，大家都給我快去吃！</div>
-                            <div class="d-flex mt-4">
-                                <i class="fa fa-heart pe-2 " aria-hidden="true"> 10</i>
-                                <i class="fa fa-comment pe-2" aria-hidden="true"> 0</i>
-                                <i class="fa fa-eye pe-2" aria-hidden="true"> 30</i>
-                            </div>
-                        </div>
 
-                        <div class="col-4 align-self-center ">
-                            <i class="fa fa-bookmark-o justify-content-end d-flex fz-18 mt-1" aria-hidden="true"></i>
+                            <div class="col-4 align-self-center ">
+                                <i class="fa fa-bookmark-o justify-content-end d-flex fz-18 mt-1" aria-hidden="true"></i>
 
-                            <div class="div post_Image d-flex justify-content-end mt-3">
-                                <img class="post_image " src="https://api.elle.com.hk/var/ellehk/storage/images/beauty_and_health/top-10-protein-foods/35540268-6-chi-HK/_1_img_1040_780.jpg" alt="">
+                                {% if eatforum.image %}
+                                <div class="div post_Image d-flex justify-content-end mt-3">
+                                    <img class="post_image " src="{{eatforum.list_image.url}}" alt="">
+                                </div>
+                                {% else %}
+                                <div class="post-thumb" style="width: 350px; height: 350px; background: #FFF">
+                                </div>
+                                {% endif %}
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <hr class="mt-4 mb-4">   
+                    {% endfor %}
                     <!---------單則post end--------->    
 
 
@@ -222,16 +266,7 @@
 
         
 
-        <div class="col-md-2 col-sm-12 text-center">
-           
-            <h5 class="pb-3 ">熱門 #Hashtag</h5> 
-            <p>＃請益</p>
-            <p>＃新開幕</p>
-            <p>＃選課</p>
-            <p>＃新生</p>
-            <p>＃學餐</p>
-
-        </div>
+            {% include 'eatforum/sidebar.html' %}
 
         <div class="col-1"></div>
         </div>

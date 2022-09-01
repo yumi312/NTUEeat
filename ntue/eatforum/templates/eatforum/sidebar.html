@@ -1,0 +1,13 @@
+{% load static %}
+<div class="col-md-2 col-sm-12 text-center">
+    
+    {% if request.user.is_authenticated %}
+            <h6 class="wt text-white"><a href="/eat/forum/create/">我要發文</a></h6>
+    {% else %}
+    {% endif %}      
+    <h5 class="pb-3 ">熱門 #Hashtag</h5>
+    {% for hashtagforum in hashtagforums %}
+            <p><a href="/eat/forum/hashtags/{{hashtagforum.slug}}">#{{hashtagforum}}</a></p>
+    {% endfor %}
+
+</div>

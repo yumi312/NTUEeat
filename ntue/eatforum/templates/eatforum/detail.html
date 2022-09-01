@@ -1,0 +1,112 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<section class="blog_area section_padding_0_80 mt-5 pt-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="single-post wow fadeInUp" data-wow-delay=".2s">
+                            <!-- Post Content -->
+                            <div class="post-content">
+                                <div class="post-meta d-flex">
+                                    <!--<img class="author-image mb-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-JDYllMOzDFu9efWWemyp5UABjsodiP52ZrNR4OdCFLdiCZNmAKkPb0SmYrmAIaMLk1o&usqp=CAU" alt="">-->
+                                    <div class="post-author-date-area d-flex">
+                                        {{eatforum.author_name}} · {{eatforum.category}} · {{eatforum.create_time}}
+                                    </div>
+                                    
+                                    <!-- Post Comment & Share Area -->
+                                    <div class="post-comment-share-area d-flex">
+                                        <!-- Post Favourite -->
+                                        <div class="post-favourite">
+                                            <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
+                                        </div>
+                                        <!-- Post Comments -->
+                                        <div class="post-comments">
+                                            <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
+                                        </div>
+                                        <!-- Post Share -->
+                                        <div class="post-share">
+                                            <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#">
+                                    <h1 class="post-headline">{{eatforum.title}}</h1>
+                                </a>
+
+                                <p>{{eatforum.contents | safe}}</p>
+                                <p><a href="/eat/article/hashtags/{{eatarticle.hashtag.slug}}">#{{eatforum.hashtag}}</a></p>
+                                <div class="btn-group">
+                                    {% if perms.forum.change_forum %}
+                                        {% if user.id == eatforum.author_name.id %}
+                                            <a href="{% url 'edit' pk=eatforum.pk %}" class="card-link">Edit</a>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% if perms.forum.delete_forum %}
+                                        {% if user.id == eatforum.author_name.id %}
+                                            <a href="{% url 'delete' pk=eatforum.pk %}" class="card-link">Delete</a>
+                                        {% endif %}
+                                    {% endif %}
+
+                                </div>
+                                {% if request.user.is_authenticated %}
+                                <div class="pr-2">
+                                    <span class="" id="like_count">{{ eatforum.like_count }}</span>
+                                    <button class="btn btn-link text-dark p-0 border-0 btn-outline-light" value="{{eatforum.id}}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                {% else %}
+                                <div class="pr-2">
+                                    <span class="" id="like_count">{{ eatforum.like_count }}</span>
+                                    
+                                    <a href="/accounts/login" class="btn btn-link text-dark p-0 border-0 btn-outline-light" id="like-button" value="{{eatforum.id}}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                {% endif %}
+                                <!--案讚的部分在messenger-->
+
+                                <div class="post-big">
+                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                </div>
+
+                                <div>我要分享(放很多app圖標)</div>
+                                <script>
+                                    $(document).on('click','#like-button',function(e){
+                                        e.preventDefault();
+                                        $.ajax({
+                                            type:'POST',
+                                            url:'{% url "like" %}',
+                                            data:{
+                                                eatforumid:$('#like-button').val(),
+                                                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                                                action:'eatforum'
+                                            },
+                                            success:function (json){
+                                                document.getElementById("like-button").innerHTML = json['result']
+                                                
+                                            },
+                                            error:function(xhr,errmsg,err){
+
+                                            }
+                                        });
+                                    })
+                                </script>
+                                {% include 'eatforum/comment.html' %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

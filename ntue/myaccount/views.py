@@ -1,9 +1,14 @@
 from django.shortcuts import render, get_object_or_404
+
+
 from .models import UserProfile
+from eatforum.models import Eatforum
 from .forms import ProfileForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+import json
 
 
 @login_required
@@ -34,5 +39,25 @@ def profile_update(request):
         form = ProfileForm(default_data)
 
     return render(request, 'account/profile_update.html', {'form': form, 'user': user})
+
+@login_required
+def like(request):
+    if request.POST.get('action') == 'eatforum':
+        result = ''
+        id = int(request.POST.get('eatforumid'))
+        eatforum = get_object_or_404(Eatforum,id=id)
+        if eatforum.likes.filter(id=request.user.id).exists():
+            eatforum.likes.remove(request.user)
+            eatforum.like_count -= 1
+            result = eatforum.like_count
+            eatforum.save()
+        else:
+            eatforum.likes.add(request.user)
+            eatforum.like_count += 1
+            result = eatforum.like_count
+            eatforum.save()
+        
+        return JsonResponse({'result':result,})
+
 
 # Create your views here.

@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     #apps
     'eat',
     'eatarticle',
+    'eatforum',
     'groupbuy',
     'base',
     'myaccount',

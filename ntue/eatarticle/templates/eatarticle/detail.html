@@ -49,10 +49,14 @@
                                 <p><a href="/eat/article/hashtags/{{eatarticle.hashtag.slug}}">#{{eatarticle.hashtag}}</a></p>
                                 <div class="btn-group">
                                     {% if perms.article.change_article %}
-                                    <a href="{% url 'edit' pk=eatarticle.pk %}" class="card-link">Edit</a>
+                                        {% if user.id == eatarticle.author_name.id %}
+                                            <a href="{% url 'edit' pk=eatarticle.pk %}" class="card-link">Edit</a>
+                                        {% endif %}
                                     {% endif %}
                                     {% if perms.article.delete_article %}
-                                    <a href="{% url 'delete' pk=eatarticle.pk %}" class="card-link">Delete</a>
+                                        {% if user.id == eatarticle.author_name.id %}
+                                            <a href="{% url 'delete' pk=eatarticle.pk %}" class="card-link">Delete</a>
+                                        {% endif %}
                                     {% endif %}
 
                                 </div>

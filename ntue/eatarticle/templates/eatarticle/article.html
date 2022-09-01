@@ -255,7 +255,7 @@
                         <div class="list-blog single-post d-sm-flex wow fadeInUpBig" data-wow-delay=".2s">
                             <!-- Post Thumb -->
                             <!-- 要留一個若沒上傳圖片的解決方案 -->
-                            {% if eatarticle.image%}
+                            {% if eatarticle.image %}
                             <div class="post-thumb">
                                 <img src="{{eatarticle.list_image.url}}" alt="">
                             </div>
@@ -303,10 +303,14 @@
                                     Reading..</a>
                                 <div class="btn-group">
                                     {% if perms.article.change_article %}
-                                    <a href="{% url 'edit' pk=eatarticle.pk %}" class="card-link">Edit</a>
+                                        {% if user.id == eatarticle.author_name.id %}
+                                            <a href="{% url 'edit' pk=eatarticle.pk %}" class="card-link">Edit</a>
+                                        {% endif %}
                                     {% endif %}
                                     {% if perms.article.delete_article %}
-                                    <a href="{% url 'delete' pk=eatarticle.pk %}" class="card-link">Delete</a>
+                                        {% if user.id == eatarticle.author_name.id %}
+                                            <a href="{% url 'delete' pk=eatarticle.pk %}" class="card-link">Delete</a>
+                                        {% endif %}
                                     {% endif %}
 
                                 </div>
