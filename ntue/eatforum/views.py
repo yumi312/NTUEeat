@@ -10,7 +10,7 @@ from .models import Hashtagforum, Eatforum, Categoryforum
 
 from django.contrib.auth.decorators import permission_required
 
-def likeforum(request, pk):
+"""def likeforum(request, pk):
     eatforum = get_object_or_404(Eatforum, id=request.POST.get('eatforum_id'))
     if eatforum.likes.filter(id=request.user.id).exists():
         eatforum.likes.remove(request.user)
@@ -18,7 +18,7 @@ def likeforum(request, pk):
         eatforum.likes.add(request.user)
     return HttpResponseRedirect(reverse('detailforum', eatforum.pk))
 
-"""class forum(ListView):
+class forum(ListView):
     model = Eatforum
     template_name = 'eatforum/forum.html'
 

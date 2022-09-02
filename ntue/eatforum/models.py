@@ -43,12 +43,14 @@ class Eatforum(models.Model):
     contents = RichTextField(blank=True,null=True)
     category = models.ForeignKey(Categoryforum, null=True, on_delete=models.PROTECT,related_name='categoryforum')# 分成 美食、校園、團購等等的分類
     hashtag = models.ForeignKey(Hashtagforum, null=True, on_delete=models.PROTECT,related_name='hashtagforum')  # hashtag
-    likes = models.ManyToManyField(User, related_name='like',default=None,blank=True),
-    like_count = models.BigIntegerField(default="0"),
+    likes = models.ManyToManyField(User, related_name='like',default=None,blank=True)
+    like_count = models.BigIntegerField(default="0")
     edit_time = models.DateTimeField(auto_now_add=True)
     create_time = models.DateTimeField(auto_now=True)
     image = models.ImageField(default="", blank=True, upload_to="images")
     list_image = ImageSpecField(source='image',processors=[ResizeToFill(200, 200)], format='JPEG', options={'quality': 60})
+    detail_image = ImageSpecField(source='image', processors=[
+                                  ResizeToFill(700, 400)], format='JPEG', options={'quality': 60})
     """ likes = models.ManyToManyField(User, related_name='blog_posts')"""
 
     
