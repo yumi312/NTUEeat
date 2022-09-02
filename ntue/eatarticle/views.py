@@ -2,12 +2,14 @@ from xml.etree.ElementTree import Comment
 from django.urls import reverse
 from django.shortcuts import redirect, render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from django.views.generic import DetailView,CreateView
+from django.views.generic import DetailView, CreateView
 from .form import ArticleForm
 from .models import Hashtag, Eatarticle
+from .utils import Autohashtag
 
 from django.contrib.auth.decorators import permission_required
 # Create your views here.
+
 
 def like(request, pk):
     eatarticle = get_object_or_404(Eatarticle, id=request.POST.get('post_id'))
@@ -19,6 +21,7 @@ def like(request, pk):
         print('123')
 
     return HttpResponseRedirect(reverse('detail', args=[str(pk)]))
+
 
 def article(request):
     q = request.GET.get('q', None)
@@ -32,13 +35,14 @@ def article(request):
     return render(request, 'eatarticle/article.html', {'eatarticles': eatarticles, 'hashtags': hashtags})
 
 
-
 # 放在eat/article.html頁面的
 """ class BlogPostDetailView(DetailView):
     model = Eatarticle
     template_name: 'eatarticle/detail.html'
     context_object_name = 'object'
     print("1") """
+
+
 def detail(request, slug=None):  # < here
     eatarticle = get_object_or_404(Eatarticle, slug=slug)
     hashtag = Hashtag.objects.all()
@@ -54,7 +58,7 @@ def detail(request, slug=None):  # < here
         context['post_is_liked'] = liked
         print("2")
         return context """
-    
+
 
 def hashtag(request, slug=None):
     eatarticle = Eatarticle.objects.filter(hashtag__slug=slug)
@@ -62,10 +66,12 @@ def hashtag(request, slug=None):
     return render(request, 'eatarticle/article.html', {'eatarticles': eatarticle, 'hashtags': hashtag})
 # 發文
 
+
 """ class AddCommentView(CreateView):
     model = Comment
     template_name: 'eatarticle/detail.html'
     fields: '__all__' """
+
 
 @permission_required('article.add_article')
 def create(request):
@@ -73,7 +79,8 @@ def create(request):
         # 如果失敗 ->(request.POST, request.FILES)
         form = ArticleForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            Autohashtag(form)
+            # form.save()
             return HttpResponseRedirect("/eat/article")
     else:
         form = ArticleForm
@@ -89,7 +96,8 @@ def edit(request, pk=None):
         form = ArticleForm(request.POST or None,
                            request.FILES, instance=a)   # 修了這行
         if form.is_valid():
-            form.save()
+            Autohashtag(form)
+            # form.save()
             return HttpResponseRedirect("/eat/article")
     else:
         form = ArticleForm(instance=a)
