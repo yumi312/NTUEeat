@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'groupbuy',
     'base',
     'myaccount',
+    'allgoods',
 ]
 
 SITE_ID = 2

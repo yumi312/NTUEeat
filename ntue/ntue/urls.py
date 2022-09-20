@@ -20,6 +20,7 @@ from myaccount import views as myaccount_views
 from eatarticle import views as eatarticle_views
 from eatforum import views as eatforum_views
 from groupbuy import views as groupbuy_views
+from allgoods import views as allgoods_views
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -49,6 +50,7 @@ urlpatterns = [
     path('eat/map/', eat_views.map),
     path('eat/top/', eat_views.top),
     path('groupbuy/', groupbuy_views.groupbuy),
+    path('groupbuy/allgoods/', allgoods_views.allgoods),
 
     path('accounts/', include('allauth.urls')),
     path('accounts/', include('myaccount.urls')),
